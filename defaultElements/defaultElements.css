@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.de-opensans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.de-glassbutton {
+    background-color: transparent;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    color: rgb(80, 80, 80);
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 300px;
+    transition-duration: 0.1s;
+    margin: 7.5px;
+    margin-top: 10px;
+    outline: rgba(245, 245, 245, 0.4) solid 5px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(241, 241, 241, 0.25) 50%, rgba(225, 225, 225, 0.25) 51%, rgba(255, 255, 255, 0.25) 100%);
+}
+
+.de-glassbutton:hover {
+    cursor: pointer;
+    outline: rgba(245, 245, 245, 0.4) solid 8px;
+    background-position-x: 300px;
+}
+
+.de-thintextinput {
+    border: none;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: transparent;
+    border-bottom: 1px rgba(0, 0, 0, 0.5) solid;
+    transition-duration: 0.1s;
+    padding-top: 10px;
+    min-width: 250px;
+}
+
+.de-thintextinput:focus {
+    border-bottom: 1.2px rgba(255, 255, 255, 0.5) solid;
+}
+
+.de-thintextinput-placeholder {
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    font-size: 20px;
+    left: 0px;
+    top: -10px;
+    padding-left: 20px;
+    pointer-events: none;
+    transition-duration: 0.25s;
+    text-overflow: clip
+}
+
+.de-thintextinput-placeholder-higher {
+    font-size: 14px;
+    left: -22px;
+    top: -34px;
+}
+
+.position-relative {
+    position: relative;
+}
