@@ -27,6 +27,10 @@
     background-position-x: 300px;
 }
 
+.de-glassbutton:active{
+    outline: rgba(245, 245, 245, 0.4) solid 3px;
+}
+
 .de-thintextinput {
     border: none;
     font-size: 25px;
