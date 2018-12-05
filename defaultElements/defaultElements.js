@@ -69,3 +69,8 @@ function wrapDE(element, newParent) {
     childElement.parentNode.removeChild(childElement);
     newParentPlaced.appendChild(childElement);
 }
+
+//Create a toast message
+function toast(Message, DisplayDuration) {
+    console.log("");
+}

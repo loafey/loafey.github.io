@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .de-opensans {
     font-family: 'Open Sans', sans-serif;
@@ -27,7 +28,7 @@
     background-position-x: 300px;
 }
 
-.de-glassbutton:active{
+.de-glassbutton:active {
     outline: rgba(245, 245, 245, 0.4) solid 3px;
 }
 
@@ -69,4 +70,37 @@
 
 .position-relative {
     position: relative;
+}
+
+/*Toast*/
+.toastContainer {
+    position: fixed;
+    z-index: 9999999;
+    right: 10px;
+    bottom: 10px;
+    min-width: 150px;
+    max-width: 400px;
+    min-height: 50px;
+    background-color: #666666;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 9px -7px rgba(0, 0, 0, 0.45);
+    transition-duration: 0.25s;
+}
+
+.toastContainer.toastText {
+    float: left;
+}
+
+.toastContainer.toastExit {
+    position: absolute;
+    right: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
 }
