@@ -89,6 +89,8 @@ function toast(Message, DisplayDuration) {
 
     var toastExit = document.createElement("p");
     toastExit.innerText = "X";
+    var clickAtribute = "removeToast('toast' + String(" + toastNumber + "))";
+    toastExit.setAttribute("onclick", clickAtribute);
     toastExit.classList.add("toast-exit");
 
     toastBox.append(toastContainer);
@@ -116,6 +118,14 @@ function toast(Message, DisplayDuration) {
 
     toastNumber += 1;
 }
+
+function removeToast(selectedToast) {
+    setTimeout(function () {
+        document.getElementById(selectedToast).remove();
+    }, 1000)
+    document.getElementById(selectedToast).classList.add("toast-container-appearing");
+}
+
 
 function toastBox() {
     var toastBoxElement = document.createElement("div");
