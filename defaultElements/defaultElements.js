@@ -71,6 +71,54 @@ function wrapDE(element, newParent) {
 }
 
 //Create a toast message
+var toastNumber = 0;
+
 function toast(Message, DisplayDuration) {
-    console.log("");
+    var toastBox = document.getElementById("toast-box");
+
+    var toastContainer = document.createElement("div");
+    toastContainer.id = "toast" + String(toastNumber);
+    toastContainer.classList.add("toast-container", "toast-container-appearing");
+    setTimeout(function () {
+        toastContainer.classList.remove("toast-container-appearing")
+    }, 100);
+
+    var toastText = document.createElement("p");
+    toastText.innerText = Message;
+    toastText.classList.add("toast-text");
+
+    var toastExit = document.createElement("p");
+    toastExit.classList.add("toast-exit");
+
+    toastBox.append(toastContainer);
+    toastContainer.append(toastText);
+    toastContainer.append(toastExit);
+
+    var tempToastNumber = toastNumber;
+
+    if (DisplayDuration == null) {
+        setTimeout(function () {
+            toastContainer.classList.add("toast-container-appearing");
+            setTimeout(function () {
+                document.getElementById("toast" + String(tempToastNumber)).remove();
+            }, 1000)
+        }, 5000)
+    } else {
+        setTimeout(function () {
+            setTimeout(function () {
+                document.getElementById("toast" + String(tempToastNumber)).remove();
+            }, 1000)
+            toastContainer.classList.add("toast-container-appearing");
+        }, DisplayDuration * 1000);
+    }
+
+    toastNumber += 1;
 }
+
+function toastBox() {
+    var toastBoxElement = document.createElement("div");
+    toastBoxElement.classList.add("toast-box");
+    toastBoxElement.id = "toast-box";
+    document.body.append(toastBoxElement);
+}
+toastBox();

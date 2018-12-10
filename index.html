@@ -30,10 +30,8 @@
         <h1 id="testTitle" class="de-opensans" style="line-height: 0">
             Toast message
         </h1>
-        <div class="toastContainer">
-            <p class="toastText">hejho</p>
-            <p class="toastExit">X</p>
-        </div>
+        <input class="de-thintextinput de-opensans" id="toastText" placeholderText="Toast Message" />
+        <button class="de-glassbutton de-opensans" onclick="if (document.getElementById('toastText').value != ''){ toast(document.getElementById('toastText').value)}">Toast</button>
     </div>
 
     <script src="./JS/index.js"></script>
