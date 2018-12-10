@@ -88,6 +88,7 @@ function toast(Message, DisplayDuration) {
     toastText.classList.add("toast-text");
 
     var toastExit = document.createElement("p");
+    toastExit.innerText = "X";
     toastExit.classList.add("toast-exit");
 
     toastBox.append(toastContainer);
@@ -98,18 +99,19 @@ function toast(Message, DisplayDuration) {
 
     if (DisplayDuration == null) {
         setTimeout(function () {
-            toastContainer.classList.add("toast-container-appearing");
-            setTimeout(function () {
-                document.getElementById("toast" + String(tempToastNumber)).remove();
-            }, 1000)
+            removeToast("toast" + String(tempToastNumber));
         }, 5000)
     } else {
         setTimeout(function () {
-            setTimeout(function () {
-                document.getElementById("toast" + String(tempToastNumber)).remove();
-            }, 1000)
-            toastContainer.classList.add("toast-container-appearing");
+            removeToast("toast" + String(tempToastNumber));
         }, DisplayDuration * 1000);
+    }
+
+    function removeToast(selectedToast) {
+        setTimeout(function () {
+            document.getElementById(selectedToast).remove();
+        }, (DisplayDuration * 1000) + 1000)
+        document.getElementById(selectedToast).classList.add("toast-container-appearing");
     }
 
     toastNumber += 1;

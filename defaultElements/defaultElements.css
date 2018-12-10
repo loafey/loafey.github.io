@@ -74,6 +74,7 @@
 
 /*Toast*/
 .toast-container {
+    position: relative;
     z-index: 9999999;
     min-width: 150px;
     width: 50%;
@@ -112,6 +113,9 @@
     -moz-user-select: none;
     user-select: none;
     cursor: pointer;
+    float: right;
+    position: absolute;
+    right: 10px;
 }
 
 .toast-box {
