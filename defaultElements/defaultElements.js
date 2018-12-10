@@ -9,7 +9,7 @@ function addCSS(Filename) {
 
     link.innerHTML = "@import url('" + Filename + "')";
     head.appendChild(link);
-    console.log("Loaded defaultElements v0.01. A css/js");
+    console.log("Loaded " + Filename);
 }
 addCSS("./defaultElements/defaultElements.css");
 
