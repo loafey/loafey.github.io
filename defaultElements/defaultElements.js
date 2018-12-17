@@ -80,7 +80,7 @@ function toast(Message, DisplayDuration) {
     toastContainer.id = "toast" + String(toastNumber);
     toastContainer.classList.add("toast-container", "toast-container-appearing");
     setTimeout(function () {
-        toastContainer.classList.remove("toast-container-appearing")
+        toastContainer.classList.remove("toast-container-appearing");
     }, 100);
 
     var toastText = document.createElement("p");
@@ -102,7 +102,7 @@ function toast(Message, DisplayDuration) {
     if (DisplayDuration == null) {
         setTimeout(function () {
             removeToast("toast" + String(tempToastNumber));
-        }, 5000)
+        }, 5000);
     } else {
         setTimeout(function () {
             removeToast("toast" + String(tempToastNumber));
@@ -112,7 +112,7 @@ function toast(Message, DisplayDuration) {
     function removeToast(selectedToast) {
         setTimeout(function () {
             document.getElementById(selectedToast).remove();
-        }, (DisplayDuration * 1000) + 1000)
+        }, (DisplayDuration * 1000) + 1000);
         document.getElementById(selectedToast).classList.add("toast-container-appearing");
     }
 
@@ -122,7 +122,7 @@ function toast(Message, DisplayDuration) {
 function removeToast(selectedToast) {
     setTimeout(function () {
         document.getElementById(selectedToast).remove();
-    }, 1000)
+    }, 1000);
     document.getElementById(selectedToast).classList.add("toast-container-appearing");
 }
 
