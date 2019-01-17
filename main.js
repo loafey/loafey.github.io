@@ -20,6 +20,7 @@ function populateAccountInfo(recievedJson) {
     document.getElementById("json-followers").href = "https://github.com/samhamnam?tab=followers";
 
     document.getElementById("json-name").innerHTML = recievedJson.name;
+    document.title = recievedJson.name + "'s portfolio";
 
     if (recievedJson.company != null) {
         document.getElementById("json-company").innerHTML = recievedJson.company;
@@ -34,8 +35,10 @@ function populateAccountInfo(recievedJson) {
 
     if (recievedJson.email != null) {
         document.getElementById("json-email").innerHTML = recievedJson.email;
+        document.getElementById("json-email").href = "mailto:" + recievedJson.email;
     } else {
         document.getElementById("json-email").innerHTML = "samuel.hammersberg@gmail.com";
+        document.getElementById("json-email").href = "mailto:samuel.hammersberg@gmail.com";
     }
 
     document.getElementById("json-hireable").innerHTML = recievedJson.hireable;
