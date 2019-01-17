@@ -20,9 +20,6 @@ function populateAccountInfo(recievedJson) {
     document.getElementById("json-accountTitle").innerHTML = recievedJson.login;
     document.getElementById("json-accountImage").src = recievedJson.avatar_url;
 
-    document.getElementById("json-accountLink").href = recievedJson.html_url;
-    document.getElementById("json-accountLink").innerHTML = recievedJson.html_url;
-
     document.getElementById("json-followers").innerHTML = recievedJson.followers;
     document.getElementById("json-followers").href = "https://github.com/samhamnam?tab=followers";
 

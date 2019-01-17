@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;
+    grid-template-rows: 420px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    z-index: 1;
+}
+
+.profile-info-background {
+    background: linear-gradient(to right, rgb(112, 26, 130) 0%, rgb(125, 185, 232) 100%);
+    position: absolute;
+    animation-name: profile-info-grid-animate;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    mask-image: url("./gridClipping.svg");
+    mask-repeat: repeat-x;
+    margin-bottom: 40px;
+    height: 420px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#json-accountImage {
+    width: 180px;
+}
+
+#json-accountLink {
+    background-color: lightskyblue;
+    border: none;
+    width: 100%;
+    height: 25px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.profile-info-card {
+    position: relative;
+    grid-column: 2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 34px 0px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    z-index: 2;
+}
+
+@keyframes profile-info-grid-animate {
+    0% {
+        filter: hue-rotate(0deg) saturate(2);
+    }
+
+    25% {
+        filter: hue-rotate(90deg) saturate(1);
+    }
+
+    50% {
+        filter: hue-rotate(180deg) saturate(1);
+    }
+
+    75% {
+        filter: hue-rotate(270deg) saturate(1);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) saturate(2);
+    }
+}
