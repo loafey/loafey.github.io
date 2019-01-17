@@ -1,18 +1,16 @@
 .tempProfilePic {
     background: linear-gradient(to right, rgb(112, 26, 130) 0%, rgb(125, 185, 232) 100%);
-    width: 100px;
-    height: 100px;
-    transform: rotate(-45deg);
+    width: 150px;
+    height: 150px;
+    /*transform: rotate(-45deg);*/
     animation-name: tempProfilePic-animate;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     filter: saturate(8);
     text-align: center;
-
-}
-
-.tempProfilePic p {
-    transform: rotate(0deg);
+    vertical-align: 50%;
+    mask-image: url("./circle.png");
+    mask-size: 100%;
 }
 
 .tempProfilePicContainer {
