@@ -1,7 +1,14 @@
 var githubUserLink = "https://api.github.com/users/samhamnam";
 var request = new XMLHttpRequest();
 
-request.open("GET", githubUserLink);
+var debugJson = true;
+
+if (debugJson != true) {
+    request.open("GET", githubUserLink);
+} else {
+    request.open("GET", "./temporary_info.json");
+    console.log("Loaded temporary json file");
+}
 request.responseType = "json";
 request.send();
 request.onload = function () {
