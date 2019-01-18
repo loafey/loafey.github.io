@@ -50,8 +50,6 @@ function populateAccountInfo(recievedJson) {
     document.getElementById("json-bio").innerHTML = recievedJson.bio;
 
     document.getElementById("json-repos").innerHTML = recievedJson.public_repos;
-    document.getElementById("json-repos").href = "https://github.com/samhamnam?tab=repositories";
 
     document.getElementById("json-gists").innerHTML = recievedJson.public_gists;
-    document.getElementById("json-gists").href = "https://gist.github.com/samhamnam";
 }
