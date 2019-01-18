@@ -18,11 +18,14 @@
         <div class="profile-info-card">
             <img id="json-accountImage">
             <h2 id="json-accountTitle"></h2>
-            <button onclick="window.open('https://github.com/samhamnam?tab=repositories', '_blank');"> <i class="fab fa-github-alt"></i>
-                Repos: <a id="json-repos"></a></button>
-            <button onclick="window.open('https://gist.github.com/samhamnam', '_blank');"><i class="fas fa-file-alt"></i>
-                Gists: <a id="json-gists"></a></button>
-            <button onclick="window.open('https://github.com/samhamnam','_blank')"><i class="fab fa-github"></i></button>
+            <button class="profile-info-button" onclick="window.open('https://github.com/samhamnam?tab=repositories', '_blank');">
+                <i class="fab fa-github-alt"></i>
+                <a id="json-repos"></a></button>
+            <button class="profile-info-button" onclick="window.open('https://gist.github.com/samhamnam', '_blank');"><i
+                    class="fas fa-file-alt"></i>
+                <a id="json-gists"></a></button>
+            <button class="profile-info-button" style="width: 100%; background-color: skyblue;" onclick="window.open('https://github.com/samhamnam','_blank')"><i
+                    class="fab fa-github"></i></button>
         </div>
     </div>
     <a id="json-bio"></a>
