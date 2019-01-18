@@ -6,22 +6,51 @@ body {
 }
 
 .profile-info-button {
+    position: relative;
     width: 50%;
     float: left;
     border: none;
-    background-color: lightgreen;
+    background-color: #00a4a5;
     margin: 0;
     font-size: 32px;
+    cursor: pointer;
+    padding: 2px;
+    transition-duration: 0.2s;
+    filter: hue-rotate(1);
+    color: white;
 }
 
+.profile-info-button:hover {
+    filter: hue-rotate(-32deg);
+}
+
+.profile-info-button::after {
+    position: absolute;
+    content: "";
+    background: linear-gradient(to right, #ff8a00, #da1b60);
+    width: 0%;
+    height: 3px;
+    left: 0;
+    /*top: calc(100% - 3px);*/
+    top: 0;
+    transition-duration: 0.2s;
+}
+
+.profile-info-button:hover::after {
+    width: 100%;
+}
+
+
 .profile-info-grid {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 220px 1fr;
-    grid-template-rows: 420px;
+    grid-template-rows: 335px;
     text-align: center;
     padding-bottom: 10px;
     padding-top: 10px;
     z-index: 1;
+    padding-bottom: 80px;
 }
 
 .profile-info-background {
@@ -40,7 +69,7 @@ body {
 }
 
 #json-accountImage {
-    width: 180px;
+    width: 160px;
 }
 
 .profile-info-card {
@@ -50,9 +79,68 @@ body {
     box-shadow: 0px 5px 34px 0px rgba(0, 0, 0, 0.5);
     background-color: white;
     z-index: 2;
+    padding-top: 20px;
 }
 
 @keyframes profile-info-grid-animate {
+    0% {
+        filter: hue-rotate(0deg) saturate(1);
+    }
+
+    25% {
+        filter: hue-rotate(90deg) saturate(1);
+    }
+
+    50% {
+        filter: hue-rotate(180deg) saturate(1);
+    }
+
+    75% {
+        filter: hue-rotate(270deg) saturate(1);
+    }
+
+    100% {
+        filter: hue-rotate(360deg) saturate(1);
+    }
+}
+
+
+
+/*Profile Pic*/
+@supports (mask-image: url("./projects/profilePicture/profileMask.svg")) {
+    .tempProfilePic {
+        display: block;
+        background: linear-gradient(to right, rgb(112, 26, 130) 0%, rgb(125, 185, 232) 100%);
+        width: 160px;
+        height: 160px;
+        /*transform: rotate(-45deg);*/
+        animation-name: tempProfilePic-animate;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        filter: saturate(8);
+        text-align: center;
+        mask-image: url("./projects/profilePicture/profileMask.svg");
+        mask-size: 100%;
+        margin-left: 30px;
+    }
+
+    #json-accountImage {
+        display: none;
+    }
+}
+
+@supports not (mask-image: url("./projects/profilePicture/profileMask.svg")) {
+    .tempProfilePic {
+        display: none;
+    }
+
+    #json-accountImage {
+        display: block;
+        margin-left: 30px;
+    }
+}
+
+@keyframes tempProfilePic-animate {
     0% {
         filter: hue-rotate(0deg) saturate(2);
     }

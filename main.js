@@ -1,7 +1,7 @@
 var githubUserLink = "https://api.github.com/users/samhamnam";
 var request = new XMLHttpRequest();
 
-var debugJson = true;
+var debugJson = false;
 
 if (debugJson != true) {
     request.open("GET", githubUserLink);
