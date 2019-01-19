@@ -11,7 +11,13 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+<body id="body">
+    <div class="tab-bar">
+        <a href="#body">Main</a>
+        <a href="#about-me">About me</a>
+        <a href="#projects">Projects</a>
+        <a href="#repo-container">Repos</a>
+    </div>
     <div class="profile-info-background"></div>
     <div class="profile-info-grid">
         <div class="profile-info-card">
@@ -31,6 +37,49 @@
     </div>
 
     <div id="main-container" class="main-container">
+        <div id="about-me">
+            <h2>About me:</h2>
+            <a id="json-bio"></a>
+            <br />
+            <a>Followers: <a id="json-followers"></a> </a>
+            <br />
+            <a id="json-name"></a>
+            <br />
+            <a id="json-company"></a>
+            <br />
+            <a id="json-blog"></a>
+            <br />
+            <a id="json-location"></a>
+            <br />
+            <a id="json-email"></a>
+            <br />
+            <a>Hireable: <a id="json-hireable"></a> </a>
+            <br />
+            <a id="json-bio"></a>
+        </div>
+
+        <div id="projects">
+            <h2>Projects: </h2>
+            <div class="project-container">
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')" class="project-container-button"><img
+                        src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+            </div>
+        </div>
+
         <div id="repo-container">
             <div id="hide-repos-container">
                 <button id="hide-repos-button" onclick="showHideUserRepos();">
@@ -41,24 +90,6 @@
             <div id="repos" style="display:none;"></div>
         </div>
     </div>
-
-    <a id="json-bio"></a>
-    <br />
-    <a>Followers: <a id="json-followers"></a> </a>
-    <br />
-    <a id="json-name"></a>
-    <br />
-    <a id="json-company"></a>
-    <br />
-    <a id="json-blog"></a>
-    <br />
-    <a id="json-location"></a>
-    <br />
-    <a id="json-email"></a>
-    <br />
-    <a>Hireable: <a id="json-hireable"></a> </a>
-    <br />
-    <a id="json-bio"></a>
 
     <script src="./populateAccount.js"></script>
     <script src="./getUserRepos.js"></script>
