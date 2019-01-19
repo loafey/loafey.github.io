@@ -31,10 +31,8 @@ function populateAccountInfo(recievedJson) {
     document.getElementById("json-location").innerHTML = recievedJson.location;
 
     if (recievedJson.email != null) {
-        document.getElementById("json-email").innerHTML = recievedJson.email;
         document.getElementById("json-email").href = "mailto:" + recievedJson.email;
     } else {
-        document.getElementById("json-email").innerHTML = "samuel.hammersberg@gmail.com";
         document.getElementById("json-email").href = "mailto:samuel.hammersberg@gmail.com";
     }
 
