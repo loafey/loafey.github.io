@@ -104,6 +104,25 @@ body {
     }
 }
 
+.repo-card {
+    position: relative;
+    border-radius: 5px;
+    border: 0.1px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.repo-card-title {
+    text-decoration: none;
+    color: #0391e7;
+}
+
+.repo-card-language {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 
 
 /*Profile Pic*/
