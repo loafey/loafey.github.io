@@ -29,6 +29,19 @@
                 onclick="window.open('https://github.com/samhamnam','_blank')"><i class="fab fa-github"></i></button>
         </div>
     </div>
+
+    <div id="main-container" class="main-container">
+        <div id="repo-container">
+            <div id="hide-repos-container">
+                <button id="hide-repos-button" onclick="showHideUserRepos();">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+                <a id="hide-repos-text">My repos - show repos</a>
+            </div>
+            <div id="repos" style="display:none;"></div>
+        </div>
+    </div>
+
     <a id="json-bio"></a>
     <br />
     <a>Followers: <a id="json-followers"></a> </a>
@@ -46,6 +59,7 @@
     <a>Hireable: <a id="json-hireable"></a> </a>
     <br />
     <a id="json-bio"></a>
+
     <script src="./populateAccount.js"></script>
     <script src="./getUserRepos.js"></script>
 </body>
