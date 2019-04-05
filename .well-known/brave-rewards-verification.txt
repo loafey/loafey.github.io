@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: samhamnam.github.io
+Token: becd60c48c8eecce928d325eec191460c8900f89106a0cd49f1ab92d5e019255
