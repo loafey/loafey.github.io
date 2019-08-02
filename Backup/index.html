@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Samuel Hammersberg's portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body id="body">
+    <div style="display:none" class="tab-bar">
+        <a href="#body">Main</a>
+        <a href="#about-me">About me</a>
+        <a href="#projects">Projects</a>
+        <a href="#repo-container">Repos</a>
+    </div>
+    <div class="profile-info-background"></div>
+    <div class="profile-info-grid">
+        <div class="profile-info-card">
+            <img id="json-accountImage">
+            <div class="tempProfilePic"></div>
+
+            <h2 id="json-accountTitle"></h2>
+            <button class="profile-info-button"
+                onclick="window.open('https://github.com/samhamnam?tab=repositories', '_blank');">
+                <i class="fab fa-github-alt"></i>
+                <a id="json-repos"></a></button>
+            <button class="profile-info-button" onclick="window.open('https://gist.github.com/samhamnam', '_blank');"><i
+                    class="fas fa-file-alt"></i>
+                <a id="json-gists"></a></button>
+            <button class="profile-info-button"
+                style="width: 100%; background-color: #0092bc; border-radius: 0 0 10px 10px;"
+                onclick="window.open('https://github.com/samhamnam','_blank')"><i class="fab fa-github"></i></button>
+        </div>
+    </div>
+
+    <div id="main-container" class="main-container">
+        <div class="social-buttons-container">
+            <a href="https://www.youtube.com/channel/UCby31OXkxcLZHw-b6tKyytA" target="_blank" class="red-hover"><i
+                    class="fab fa-youtube"></i></a>
+            <a id="json-email" class="blue-hover"><i class="fas fa-envelope"></i></a>
+            <a href="https://discord.gg/Syy7zYd" target="_blank" class="blue-hover"><i class="fab fa-discord"></i></a>
+            <a href="https://twitter.com/samhamnam_" target="_blank" class="blue-hover"><i
+                    class="fab fa-twitter"></i></a>
+        </div>
+        <div id="about-me">
+            <h2>About me:</h2>
+            <a id="json-bio"></a>
+            <br />
+            <a>Followers: <a id="json-followers"></a> </a>
+            <br />
+            <a id="json-name"></a>
+            <br />
+            <a id="json-company"></a>
+            <br />
+            <a id="json-blog"></a>
+            <br />
+            <a id="json-location"></a>
+            <br />
+            <a id="json-email"></a>
+            <br />
+            <a>Hireable: <a id="json-hireable"></a> </a>
+            <br />
+            <a id="json-bio"></a>
+        </div>
+
+        <div style="display:none" id="projects">
+            <h2>Projects: </h2>
+            <div class="project-container">
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+                <button onclick="window.open('https://samhamnam.bitbucket.io/UI/', '_blank')"
+                    class="project-container-button"><img src="https://samhamnam.bitbucket.io/UI/favicon.ico"></button>
+            </div>
+        </div>
+
+        <div id="repo-container">
+            <div id="hide-repos-container">
+                <button id="hide-repos-button" onclick="showHideUserRepos();">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+                <a id="hide-repos-text">My repos - show repos</a>
+            </div>
+            <div id="repos" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script src="./populateAccount.js"></script>
+    <script src="./getUserRepos.js"></script>
+</body>
+
+</html>
