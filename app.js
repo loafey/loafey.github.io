@@ -52,7 +52,7 @@ var setScrollLocation = (goalpage) => {
 };
 
 var frameUpdate = () => {
-    scrollDestination = lerp(siteContentContainerElement.scrollLeft, (siteContentElement.clientWidth / 4) * page, 0.4);
+    scrollDestination = lerp(siteContentContainerElement.scrollLeft, (siteContentElement.clientWidth / 4) * page + 2, 0.4);
     //dotDestination = lerp(scrollIndicatorDotBigElement.style.left.split("px")[0], (scrollIndicatorElement.clientWidth / 4) * page, 0.4);
     //scrollIndicatorDotBigElement.style.left = dotDestination + "px";
     scrollIndicatorDotBigElement.style.left = (scrollIndicatorElement.clientWidth / 4) * page + "px";
