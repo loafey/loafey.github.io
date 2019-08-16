@@ -199,6 +199,21 @@ h1{
     font-family: 'Farro', sans-serif;
 }
 
+.home-art{
+    position: absolute;
+    height: 50%;
+    width: calc(25% );
+    top: 0;
+    left: 0;
+    background-color: #222121;
+    background-image: url("./code.png");
+    animation-name: home-art;
+    animation-duration: 60000s;
+    animation-iteration-count: infinite;
+    background-size: 75%;
+    background-repeat: repeat-y;
+}
+
 @media only screen and (max-width: 620px){
     #scroll-indicator{
         left: calc(50% - var(--scrollindicator-width) / 2);
@@ -250,6 +265,10 @@ h1{
     .content {
         padding-top: 80px;
     }
+
+    .home-art{
+        background-size: 200%;
+    }
 }
 
 
@@ -283,21 +302,6 @@ h1{
 a {color: wheat}
 
 a:visited{color:wheat}
-
-.home-art{
-    position: absolute;
-    height: 50%;
-    width: calc(25% );
-    top: 0;
-    left: 0;
-    background-color: #222121;
-    background-image: url("./code.png");
-    animation-name: home-art;
-    animation-duration: 60000s;
-    animation-iteration-count: infinite;
-    background-size: 50%;
-    background-repeat: repeat-y;
-}
 
 @keyframes home-art{
     0%{
