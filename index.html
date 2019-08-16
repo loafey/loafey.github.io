@@ -10,6 +10,79 @@
 </head>
 
 <body>
+    <nav class="site-navigator" id="site-navigator">
+        <div class="navigator-progress-bar"></div>
+        <div class="navigator-button-grid">
+            <div class="navigator-name-pic">
+                <img src="profilepic.png" alt="I am missing :)" class="navigator-profile-pic">
+                <h1>Hello!</h1>
+            </div>
+            <button class="navigator-button" onclick="setScrollLocation(0); smallScreenButtonPress();">
+                Home
+            </button>
+            <button class="navigator-button" onclick="setScrollLocation(1); smallScreenButtonPress();">
+                About
+            </button>
+            <button class="navigator-button" onclick="setScrollLocation(2); smallScreenButtonPress();">
+                Projects
+            </button>
+            <button class="navigator-button" onclick="setScrollLocation(3); smallScreenButtonPress();">
+                Contact info
+            </button>
+        </div>
+    </nav>
+
+    <nav class="topbar">
+        <button onclick="switchShowingSidebar()">=</button>
+    </nav>
+
+    </nav>
+
+    <div class="site-content-container" id="site-content-container">
+        <div class="site-content" id="site-content">
+            <div class="content">
+                <p>
+                    <h2>Welcome!</h2>
+                    <p>
+                        A Swedish dude who enjoys programming. </br>
+                        Followers: 1 </br>
+                        Samuel Hammersberg </br>
+                        Not currently hired </br>
+                        http://samhamnam.github.io </br>
+                        Sweden </br>
+                        </br>
+                        Hireable: true
+                    </p>
+                </p>
+            </div>
+            <div class="content">
+                <p>
+                    About
+                </p>
+            </div>
+            <div class="content">
+                <h2>
+                    Projects
+                </h2>
+                <ul id="project-list">
+                </ul>
+            </div>
+            <div class="content">
+                <p>
+                    Contact Info
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="scroll-indicator">
+        <div class="scroll-indicator-dot"></div>
+        <div class="scroll-indicator-dot"></div>
+        <div class="scroll-indicator-dot"></div>
+        <div class="scroll-indicator-dot"></div>
+        <div id="scroll-indicator-dot-big"></div>
+    </div>
+    <!--
     <div class="page-parts">
         <div class="page-part part-home">
             <div class="first-part-image"></div>
@@ -48,7 +121,7 @@
         </div>
     </nav>
 
-
+    -->
     <script src="app.js"></script>
 </body>
 

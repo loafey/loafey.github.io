@@ -274,7 +274,7 @@ body {
         animation-iteration-count: infinite;
         filter: saturate(8);
         text-align: center;
-        mask-image: url("./projects/profilePicture/profileMask.svg");
+        mask-image: url("../profileMask.svg");
         mask-size: 100%;
         margin-left: 30px;
     }
