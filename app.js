@@ -100,7 +100,7 @@ fetch("https://api.github.com/users/samhamnam/repos", {
             var newElement = document.createElement("li");
             newElement.classList.add("project-list-li");
             newElement.innerHTML =
-                "<div class='project-list-element'><p>" + element.name + "</p><button class='show-project-button' onclick='showProjectInfo(this," + element.id + ");'>+</button></div><div class='project-info' id=" + element.id + "><p>Description: " + element.description + "</p> <p>Language: " + element.language + "</p> <p>URL: <a href='" + element.url + "'>" + element.url + "</a></p></div>";
+                "<div class='project-list-element'><p>" + element.name + "</p><button class='show-project-button' onclick='showProjectInfo(this," + element.id + ");'>+</button></div><div class='project-info' id=" + element.id + "><p>Description: " + element.description + "</p> <p>Language: " + element.language + "</p> <p>URL: <a href='" + element.html_url + "' target='_blank'>" + element.html_url + "</a></p></div>";
             projectListElement.appendChild(newElement);
         });
     });
