@@ -1,113 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Samuel Hammersberg</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Samuel Hammersberg</title>
-</head>
-
-<body>
-    <nav class="site-navigator" id="site-navigator">
-        <div class="navigator-progress-bar"></div>
-        <div class="navigator-button-grid">
-            <div class="navigator-name-pic">
-                <img src="profilepic.png" alt="I am missing :)" class="navigator-profile-pic">
-                <h1>Hello!</h1>
-            </div>
-            <button class="navigator-button" onclick="setScrollLocation(0); smallScreenButtonPress();">
-                Home
-            </button>
-            <button class="navigator-button" onclick="setScrollLocation(1); smallScreenButtonPress();">
-                About
-            </button>
-            <button class="navigator-button" onclick="setScrollLocation(2); smallScreenButtonPress();">
-                Projects
-            </button>
-            <button class="navigator-button" onclick="setScrollLocation(3); smallScreenButtonPress();">
-                Contact info
-            </button>
-        </div>
-    </nav>
-
-    <nav class="topbar">
-        <button onclick="switchShowingSidebar()">=</button>
-    </nav>
-
-    <div class="site-content-container" id="site-content-container">
-        <div class="site-content" id="site-content">
-            <div class="content">
-                <div class="home-art">
+    <body>
+        <nav class="site-navigator" id="site-navigator">
+            <div class="navigator-progress-bar"></div>
+            <div class="navigator-button-grid">
+                <div class="navigator-name-pic">
+                    <img
+                        src="profilepic.png"
+                        alt="I am missing :)"
+                        class="navigator-profile-pic"
+                    />
+                    <h1>Hello!</h1>
                 </div>
-                <div class="home-text">
-                    <h2>Welcome!</h2>
+                <button
+                    class="navigator-button"
+                    onclick="setScrollLocation(0); smallScreenButtonPress();"
+                >
+                    Home
+                </button>
+                <button
+                    class="navigator-button"
+                    onclick="setScrollLocation(1); smallScreenButtonPress();"
+                >
+                    About
+                </button>
+                <button
+                    class="navigator-button"
+                    onclick="setScrollLocation(2); smallScreenButtonPress();"
+                >
+                    Projects
+                </button>
+                <button
+                    class="navigator-button"
+                    onclick="setScrollLocation(3); smallScreenButtonPress();"
+                >
+                    Contact info
+                </button>
+            </div>
+        </nav>
+
+        <nav class="topbar">
+            <button onclick="switchShowingSidebar()">=</button>
+        </nav>
+
+        <div class="site-content-container" id="site-content-container">
+            <div class="site-content" id="site-content">
+                <div class="content">
+                    <div class="home-art"></div>
+                    <div class="home-text">
+                        <h2>Welcome!</h2>
+                        <p>
+                            Hello and welcome to my website!<br />Here you can
+                            find all my different projects which are currently
+                            public on GitHub (most projects as of now are sadly
+                            private).
+                            <br />
+                            <br />
+                            If you are interested in what I do and wanna talk
+                            with me you can reach me at
+                            <a href="mailto:samuel.hammersberg@gmail.com"
+                                >samuel.hammmersberg@gmail.com</a
+                            >
+                            and further ways of contacting me can be found in
+                            the contact info tab!
+                        </p>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>
+                        About
+                    </h2>
                     <p>
-                        Hello and welcome to my website!<br>Here you can find all my different projects which are
-                        currently
-                        public on GitHub (most projects as of now are sadly private).
-                        <br>
-                        <br>
-                        If you are interested in what I do and wanna talk with me you can reach me at <a
-                            href="mailto:samuel.hammersberg@gmail.com">samuel.hammmersberg@gmail.com</a> and further
-                        ways of contacting me can be found in the contact info tab!
+                        I am a 19 year old programmer that primarily focuses on
+                        JavaScript, C# and Rust. My other talents include
+                        Python, NodeJS (TypeScript, Electron etc) and of course
+                        HTML and CSS, as you can see here. When it comes to
+                        webbdesign I mainly like to use pure HTML/CSS but I do
+                        have experience with frameworks such as Vue and React.
+                        <br /><br />
+                        I studied Information and Media technology at Lerums
+                        Gymnasium.
+                        <br /><br />
+                        I am a bit of a nerd when it comes to computers and
+                        programming as they are subjects I find very
+                        interesting. My favorite language is currently C# as it
+                        is the one I find the most fun to write and use.
                     </p>
                 </div>
-            </div>
-            <div class="content">
-                <h2>
-                    About
-                </h2>
-                <p>
-                    I am a 19 year old programmer that primarily focuses on JavaScript and C#. My other talents include
-                    Python, NodeJS (TypeScript, Electron etc), a teeny-tiny bit of Rust and of course HTML and CSS, as
-                    you can see here.
-                    When it comes to webbdesign I mainly like to use HTML/CSS and JavaScript but I do have experience
-                    with frameworks such as Vue and React.
-                    <br><br>
-                    I studied Information and Media technology at Lerums Gymnasium.
-                    <br><br>
-                    I am a bit of a nerd when it comes to computers and programming as they are subjects I find very
-                    interesting. My favorite language is currently C# as it is the one I find the most fun to write and
-                    use.
-                </p>
-            </div>
-            <div class="content" style="overflow-y: auto">
-                <h2>
-                    Projects
-                </h2>
-                <ul id="project-list">
-                </ul>
-            </div>
-            <div class="content">
-                <h2>
-                    Contact Info
-                </h2>
-                <p>
-                    GitHub: <a href="https://github.com/samhamnam">https://github.com/samhamnam</a>
-                    <br>
-                    Mail: <a href="mailto:samuel.hammersberg@gmail.com">samuel.hammmersberg@gmail.com</a>
-                    <br>
-                    YouTube: <a
-                        href="https://www.youtube.com/channel/UCby31OXkxcLZHw-b6tKyytA/">https://www.youtube.com/channel/UCby31OXkxcLZHw-b6tKyytA/</a>
-                    <br>
-                    Twitter: <a href="https://twitter.com/samhamnam_">@samhamnam_</a>
-                    <br>
-                    Discord: Trashpanda#9810 (Warning: May change in the future)
-                </p>
+                <div class="content" style="overflow-y: auto">
+                    <h2>
+                        Projects
+                    </h2>
+                    <ul id="project-list"></ul>
+                </div>
+                <div class="content" style="overflow-y: auto">
+                    <h2>
+                        Contact Info
+                    </h2>
+
+                    <div class="contact-info-box">
+                        <div
+                            class="contact-info-card"
+                            onclick="window.open('https://github.com/samhamnam')"
+                        >
+                            <div class="contact-info-card-title">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <a
+                                href="https://github.com/samhamnam"
+                                target="_blank"
+                                >samhamnam</a
+                            >
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-card-title">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a
+                                href="mailto:samuel.hammersberg@gmail.com"
+                                target="_blank"
+                                >samuel.hammmersberg@gmail.com</a
+                            >
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-card-title">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <a
+                                href="https://www.youtube.com/channel/UCby31OXkxcLZHw-b6tKyytA/"
+                                target="_blank"
+                                >Samuel Hammersberg</a
+                            >
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-card-title">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <a
+                                href="https://twitter.com/samhamnam_"
+                                target="_blank"
+                                >@samhamnam_</a
+                            >
+                        </div>
+                        <div class="contact-info-card" style="cursor: initial;">
+                            <div class="contact-info-card-title">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <a>
+                                Astroneer Cate#9810
+                            </a>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-card-title">
+                                <i class="fab fa-twitch"></i>
+                            </div>
+                            <a
+                                href="https://www.twitch.tv/samhamnam_"
+                                target="_blank"
+                                >samhamnam_</a
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="scroll-indicator">
-        <div class="scroll-indicator-dot"></div>
-        <div class="scroll-indicator-dot"></div>
-        <div class="scroll-indicator-dot"></div>
-        <div class="scroll-indicator-dot"></div>
-        <div id="scroll-indicator-dot-big"></div>
-    </div>
-    <script src="app.js"></script>
-</body>
-
+        <div id="scroll-indicator">
+            <div class="scroll-indicator-dot"></div>
+            <div class="scroll-indicator-dot"></div>
+            <div class="scroll-indicator-dot"></div>
+            <div class="scroll-indicator-dot"></div>
+            <div id="scroll-indicator-dot-big"></div>
+        </div>
+        <script src="app.js"></script>
+        <script
+            src="https://kit.fontawesome.com/c0187d5cbd.js"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>

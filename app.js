@@ -22,40 +22,51 @@ document.addEventListener("scroll", () => {
 });*/
 
 var scrollLocation = 0;
-var siteContentContainerElement = document.getElementById("site-content-container");
+var siteContentContainerElement = document.getElementById(
+    "site-content-container"
+);
 var siteContentElement = document.getElementById("site-content");
 var scrollDestination = 0;
 var dotDestination = 0;
 var scrollIndicatorElement = document.getElementById("scroll-indicator");
-var scrollIndicatorDotBigElement = document.getElementById("scroll-indicator-dot-big");
+var scrollIndicatorDotBigElement = document.getElementById(
+    "scroll-indicator-dot-big"
+);
 var page = 0;
 
 var lerp = (x, y, interval) => {
     return x * (1 - interval) + y * interval;
-}
+};
 
-var setScrollLocation = (goalpage) => {
+var setScrollLocation = goalpage => {
     page = goalpage;
-    var allProjectInfos = document.getElementsByClassName("project-info")
-    var allProjectButtons = document.getElementsByClassName("show-project-button");
+    var allProjectInfos = document.getElementsByClassName("project-info");
+    var allProjectButtons = document.getElementsByClassName(
+        "show-project-button"
+    );
 
-    Array.from(allProjectButtons).forEach((element) => {
+    Array.from(allProjectButtons).forEach(element => {
         element.innerHTML = "+";
     });
 
-    Array.from(allProjectInfos).forEach((element) => {
+    Array.from(allProjectInfos).forEach(element => {
         if (element.classList.contains("project-info-shown")) {
             element.classList.remove("project-info-shown");
-            element.parentElement
-        };
+            element.parentElement;
+        }
     });
 };
 
 var frameUpdate = () => {
-    scrollDestination = lerp(siteContentContainerElement.scrollLeft, (siteContentElement.clientWidth / 4) * page + 2, 0.4);
+    scrollDestination = lerp(
+        siteContentContainerElement.scrollLeft,
+        (siteContentElement.clientWidth / 4) * page + 2,
+        0.4
+    );
     //dotDestination = lerp(scrollIndicatorDotBigElement.style.left.split("px")[0], (scrollIndicatorElement.clientWidth / 4) * page, 0.4);
     //scrollIndicatorDotBigElement.style.left = dotDestination + "px";
-    scrollIndicatorDotBigElement.style.left = (scrollIndicatorElement.clientWidth / 4) * page + "px";
+    scrollIndicatorDotBigElement.style.left =
+        (scrollIndicatorElement.clientWidth / 4) * page + "px";
     siteContentContainerElement.scrollLeft = scrollDestination;
     requestAnimationFrame(frameUpdate);
 };
@@ -77,14 +88,22 @@ var switchShowingSidebar = () => {
         sidebarHidden = false;
     } else {
         siteNavigatorElement.classList.remove("show-sitenavigator");
-        document.getElementById("delete-sidebar-element").parentElement.removeChild(document.getElementById("delete-sidebar-element"));
+        document
+            .getElementById("delete-sidebar-element")
+            .parentElement.removeChild(
+                document.getElementById("delete-sidebar-element")
+            );
         console.log("removing show-sitenavigator");
         sidebarHidden = true;
-    };
+    }
 };
 
 var smallScreenButtonPress = () => {
-    document.getElementById("delete-sidebar-element").parentElement.removeChild(document.getElementById("delete-sidebar-element")); //error if non existant
+    document
+        .getElementById("delete-sidebar-element")
+        .parentElement.removeChild(
+            document.getElementById("delete-sidebar-element")
+        ); //error if non existant
     if (siteNavigatorElement.classList.contains("show-sitenavigator")) {
         siteNavigatorElement.classList.remove("show-sitenavigator");
         sidebarHidden = true;
@@ -94,20 +113,36 @@ var smallScreenButtonPress = () => {
 var projectListElement = document.getElementById("project-list");
 fetch("https://api.github.com/users/samhamnam/repos", {
     method: "get"
-}).then((Response) => {
-    Response.json().then((data) => {
-        data.forEach(element => {
-            var newElement = document.createElement("li");
-            newElement.classList.add("project-list-li");
-            newElement.innerHTML =
-                "<div class='project-list-element'><p>" + element.name + "</p><button class='show-project-button' onclick='showProjectInfo(this," + element.id + ");'>+</button></div><div class='project-info' id=" + element.id + "><p>Description: " + element.description + "</p> <p>Language: " + element.language + "</p> <p>URL: <a href='" + element.html_url + "' target='_blank'>" + element.html_url + "</a></p></div>";
-            projectListElement.appendChild(newElement);
+})
+    .then(Response => {
+        Response.json().then(data => {
+            data.forEach(element => {
+                var newElement = document.createElement("li");
+                newElement.classList.add("project-list-li");
+                newElement.innerHTML =
+                    "<div class='project-list-element'><p>" +
+                    element.name +
+                    "</p><button class='show-project-button' onclick='showProjectInfo(this," +
+                    element.id +
+                    ");'>+</button></div><div class='project-info' id=" +
+                    element.id +
+                    "><p>Description: " +
+                    element.description +
+                    "</p> <p>Language: " +
+                    element.language +
+                    "</p> <p>URL: <a href='" +
+                    element.html_url +
+                    "' target='_blank'>" +
+                    element.html_url +
+                    "</a></p></div>";
+                projectListElement.appendChild(newElement);
+            });
         });
+    })
+    .catch(err => {
+        var listElement = document.createElement("li");
+        listElement.innerHTML = "<p>Failed to fetch repositories!</p>";
     });
-}).catch((err) => {
-    var listElement = document.createElement("li");
-    listElement.innerHTML = "<p>Failed to fetch repositories!</p>"
-});
 
 var showProjectInfo = (button, id) => {
     var projectInfo = document.getElementById(id);
@@ -117,5 +152,5 @@ var showProjectInfo = (button, id) => {
     } else {
         projectInfo.classList.add("project-info-shown");
         button.innerHTML = "-";
-    };
+    }
 };
