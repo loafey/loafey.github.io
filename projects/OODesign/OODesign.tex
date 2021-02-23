@@ -11,7 +11,7 @@
 \newcommand{\ddx}{\frac{d}{dx}}
 
 \begin{document}
-\includegraphics[width=2em]{2ljhyisqtna51.png}\newline
+\includegraphics[width=2em]{2ljhyisqtna51.png}
 \begin{center}
     \vspace*{\fill}
     {\Huge Object Oriented principles and design.}\newline
@@ -83,44 +83,49 @@
 \end{center}
 \begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
     \ParallelLText{\noindent
-    \textbf{Template Method}\newline
-    This pattern suggests that you break down your algorithms into smaller steps, and
-    each step is it's own method. These may either be abstract or inheritable, but the idea
-    is that the client supply their own subclasses with their own implementations of the steps.
+        \textbf{Template Method}\newline
+        This pattern suggests that you break down your algorithms into smaller steps, and
+        each step is it's own method. These may either be abstract or inheritable, but the idea
+        is that the client supply their own subclasses with their own implementations of the steps.
 
-    \textbf{Bridge}\newline
-    Abstractions should be decoupled from it's implementation,
-    so the two can vary independently.\\
-    {\tiny \textbf{Return to this!}}
+        \textbf{Bridge}\newline
+        The bridge pattern is a design pattern used
+        in software engineering that is meant to
+        "decouple an abstraction from its implementation
+        so that the two can vary independently".
+        The bridge uses encapsulation, aggregation,
+        and can use inheritance to separate
+        responsibilities into different classes.
 
-    \textbf{Strategy}\newline
-    This suggests that algorithms should be able to be selected during runtime.
-    Instead of implenting a single algorithm directly, an algorithms should be abled to be
-    selected during runtime.
 
-    \textbf{State}\newline
-    This allows objects to change their behaviour when its internal state changes. This could be
-    seen as an implementation of the Strategy Pattern.
+        \textbf{Strategy}\newline
+        This suggests that algorithms should be able to be selected during runtime.
+        Instead of implenting a single algorithm directly, an algorithms should be abled to be
+        selected during runtime.
 
-    \textbf{Decorator}\newline
-    Decorator pattern allows for objects to implement behavior dynamically without
-    affecting other objects of the same class. This can be useful for the Single Responsibility
-    Principle as it allows for objects to have dynamic different areas of concerns, without
-    the need for subtyping.
+        \textbf{State}\newline
+        This allows objects to change their behaviour when its internal state changes. This could be
+        seen as an implementation of the Strategy Pattern.
 
-    \textbf{Adapter}\newline
-    This is used to wrap an interface of another class to be used as another interface.
-    It's used to make existing classes work with each other without modifying their source code.
+        \textbf{Decorator}\newline
+        Decorator pattern allows for objects to implement behavior dynamically without
+        affecting other objects of the same class. This can be useful for the Single Responsibility
+        Principle as it allows for objects to have dynamic different areas of concerns, without
+        the need for subtyping.
 
-    \textbf{Factory (Method)}\newline
-    The factory method pattern is a creational pattern
-    that uses factory methods to deal with
-    the problem of creating objects without having to specify
-    the exact class of the object that will be created.
-    This is done by creating objects by calling a factory
-    method—either specified in an interface and implemented
-    by child classes, or implemented in a base class and
-    optionally overridden by derived classes—rather than by calling a constructor.
+        \textbf{Adapter}\newline
+        This is used to wrap an interface of another class to be used as another interface.
+        It's used to make existing classes work with each other without modifying their source code.
+
+        \textbf{Factory (Method)}\newline
+        The factory method pattern is a creational pattern
+        that uses factory methods to deal with
+        the problem of creating objects without having to specify
+        the exact class of the object that will be created.
+        This is done by creating objects by calling a factory
+        method—either specified in an interface and implemented
+        by child classes, or implemented in a base class and
+        optionally overridden by derived classes—rather than by calling a constructor.
     }
     \ParallelRText{\noindent
         \textbf{Singleton}\newline
@@ -141,16 +146,29 @@
         single object. This is often represented as a tree structure.
 
         \textbf{Module}\newline
-        Ko
+        This design pattern is used to wrap a set of function, variables and classes
+        in a module, similarly to packagess in Java.
 
         \textbf{Facade}\newline
-        Ko
+        A facade is an object that serves as a front-facing inteface used to mask
+        more complex underlying code.
 
         \textbf{Model-View-Controller}\newline
-        Ko
+        \underline{Model}\\
+        The central component of the pattern.
+        It is the application's dynamic data structure,
+        independent of the user interface.
+        It directly manages the data, logic and rules of the application.\\
+        \underline{View}\\
+        Any representation of information such as a chart,
+        diagram or table. Multiple views of the same
+        information are possible, such as a bar chart
+        for management and a tabular view for accountants.\\
+        \underline{Controller}\\
+        Accepts input and converts it to commands for the model or view.
 
         \textbf{Observer}\newline
-        Ko
+        The observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
     }
     \ParallelPar
 \end{Parallel}
