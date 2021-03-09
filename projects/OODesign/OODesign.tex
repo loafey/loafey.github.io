@@ -82,7 +82,7 @@
     {\huge Design Patterns}
 \end{center}
 \begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
-    \ParallelLText{\noindent
+    \ParallelLText{
         \textbf{Template Method}\newline
         This pattern suggests that you break down your algorithms into smaller steps, and
         each step is it's own method. These may either be abstract or inheritable, but the idea
@@ -127,7 +127,7 @@
         by child classes, or implemented in a base class and
         optionally overridden by derived classes—rather than by calling a constructor.
     }
-    \ParallelRText{\noindent
+    \ParallelRText{
         \textbf{Singleton}\newline
         This restricts a class to only be created once.
         This is used to coordinate actions across the whole program easily.
@@ -179,25 +179,41 @@
     {\huge Design Patterns (VG)}
 \end{center}
 \begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
-    \ParallelLText{\noindent
+    \ParallelLText{
         \textbf{Entity}\newline
         Ko
 
         \textbf{Aggregate}\newline
         Ko
 
-        \textbf{Chain of Responsibility}\newline
-        Ko
+        \textbf{Chain-of-Responsibility}\newline
+        The Chain-of-Responsibility pattern consists of a source of command objects
+        and a series of processing objects. Each processing objects contains logic that
+        defines the types of command objectss that it can handle, and the rest are passed to the
+        next procesor in the chain. There should also be a mechanism for adding new processing
+        objects to the end of the chain.
 
         \textbf{Visitor}\newline
-        Ko
+        This pattern is a way of separating an algorithm from an object structure on
+        which it operates. A practical result of this separation is the ability to
+        add new operations to existing object structures without modifying the structures.
+        It is one way to follow the open/closed principle.
 
         \textbf{Abstract Factory}\newline
-        Ko
+        This provides a way to encapsulate a group of individual factories that have
+        a common theme without specifying their concrete classes.
+        In normal usage,the client software creates a concrete implementation of
+        the abstract factory and then uses the generic interface of the factory
+        to create the concrete objects that are part of the theme. The client does
+        not know (or care) which concrete objects it gets from each of these
+        internal factories, since it uses only the generic interfaces of their products.
     }
-    \ParallelRText{\noindent
+    \ParallelRText{
         \textbf{Command}\newline
-        Ko
+        This  is a behavioral design pattern in which an object is used to encapsulate
+        all information needed to perform an action or trigger an event at a later time.
+        This information includes the method name, the object that owns the method and
+        values for the method parameters.
 
         \textbf{Servant}\newline
         A servant object is one that offers some functionality to a group of objects
@@ -225,4 +241,149 @@
     }
     \ParallelPar
 \end{Parallel}
+\newpage
+
+\begin{center}
+    {\huge Concepts}
+\end{center}
+
+\begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
+    \ParallelLText{
+        \textbf{Class and object}\newline
+        Ko
+
+        \textbf{Static and dynamic type}\newline
+        Ko
+
+        \textbf{Encapsulation}\newline
+        Ko
+
+        \textbf{Specification and Implementation inheritance}\newline
+        Ko
+
+        \textbf{Static method and instance method}\newline
+        Ko
+
+        \textbf{Variables and attributes}\newline
+        Ko
+
+        \textbf{Abstract class and interface}\newline
+        Ko
+    }
+    \ParallelRText{
+        \textbf{Dynamic Binding}\newline
+        Ko
+
+        \textbf{Primitive and referencetypes}\newline
+        Ko
+
+        \textbf{Alias}\newline
+        Ko
+
+        \textbf{Super and subclass}\newline
+        Ko
+
+        \textbf{Overloading and overriding}\newline
+        Ko
+
+        \textbf{Constructor}\newline
+        Ko
+
+        \textbf{Initialization}\newline
+        Ko
+    }
+    \ParallelPar
+\end{Parallel}
+
+\newpage
+\begin{center}
+    {\huge Mechanisms and techniques}
+\end{center}
+
+\begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
+    \ParallelLText{
+        \textbf{Mutability and immutability}\newline
+        Ko
+
+        \textbf{Refactoring}\newline
+        Ko
+
+        \textbf{Defensive Copying}\newline
+        Ko
+
+        \textbf{Immutable Adapters}\newline
+        Ko
+
+        \textbf{Exceptions}\newline
+        Ko
+
+        \textbf{Method Cascading}\newline
+        Ko
+    }
+    \ParallelRText{
+        \textbf{Mutate-by-copy}\newline
+        Ko
+
+        \textbf{Lambdas and function interfaces}\newline
+        Ko
+
+        \textbf{Design by contract}\newline
+        Ko
+
+        \textbf{Algebraic data type and object hierarchy(VG)}\newline
+        Ko
+
+        \textbf{Streams}\newline
+        Ko
+
+        \textbf{Threads and threadsecurity}\newline
+        Ko
+
+    }
+    \ParallelPar
+\end{Parallel}
+
+\newpage
+\begin{center}
+    {\huge Polymorphism and code reuse}
+\end{center}
+\begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
+    \ParallelLText{
+        \textbf{Polymorphism}\newline
+        Ko
+
+        \textbf{Subtype-polymorphism}\newline
+        Ko
+
+        \textbf{Parametric polymorphism}\newline
+        Ko
+
+        \textbf{Ad hoc-polymorphism(VG)}\newline
+        Ko
+
+        \textbf{Co-,contra-, and invariant}\newline
+        Ko
+
+        \textbf{Delegation}\newline
+        Ko
+    }
+    \ParallelRText{
+        \textbf{Inheritance}\newline
+        Ko
+
+        \textbf{Type constructor and type parameter}\newline
+        Ko
+
+        \textbf{Type argument and Wildcards}\newline
+        Ko
+
+        \textbf{Upper and lower bounds}\newline
+        Ko
+
+        \textbf{Get-Put principle}\newline
+        Ko
+    }
+    \ParallelPar
+\end{Parallel}
+
 \end{document}
