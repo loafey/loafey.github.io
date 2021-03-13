@@ -181,69 +181,21 @@
 \begin{center}
     {\huge Design Patterns (VG)}
 \end{center}
-\begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
-    \ParallelLText{
-        \textbf{Entity}\newline
-        Ko
 
-        \textbf{Aggregate}\newline
-        Ko
+\textbf{Entity}\newline
+Ko
 
-        \textbf{Chain-of-Responsibility}\newline
-        The Chain-of-Responsibility pattern consists of a source of command objects
-        and a series of processing objects. Each processing objects contains logic that
-        defines the types of command objectss that it can handle, and the rest are passed to the
-        next procesor in the chain. There should also be a mechanism for adding new processing
-        objects to the end of the chain.
+\textbf{Aggregate}\newline
+Ko
 
-        \textbf{Visitor}\newline
-        This pattern is a way of separating an algorithm from an object structure on
-        which it operates. A practical result of this separation is the ability to
-        add new operations to existing object structures without modifying the structures.
-        It is one way to follow the open/closed principle.
+\textbf{Chain-of-Responsibility}\newline
+The Chain-of-Responsibility pattern consists of a source of command objects
+and a series of processing objects. Each processing objects contains logic that
+defines the types of command objectss that it can handle, and the rest are passed to the
+next procesor in the chain. There should also be a mechanism for adding new processing
+objects to the end of the chain.
 
-        \textbf{Abstract Factory}\newline
-        This provides a way to encapsulate a group of individual factories that have
-        a common theme without specifying their concrete classes.
-        In normal usage,the client software creates a concrete implementation of
-        the abstract factory and then uses the generic interface of the factory
-        to create the concrete objects that are part of the theme. The client does
-        not know (or care) which concrete objects it gets from each of these
-        internal factories, since it uses only the generic interfaces of their products.
-    }
-    \ParallelRText{
-        \textbf{Command}\newline
-        This  is a behavioral design pattern in which an object is used to encapsulate
-        all information needed to perform an action or trigger an event at a later time.
-        This information includes the method name, the object that owns the method and
-        values for the method parameters.
 
-        \textbf{Servant}\newline
-        A servant object is one that offers some functionality to a group of objects
-        without defining that functionality in them. The object in question are taken
-        as a parameter by the servant. For example, an object that moves polygons,
-        instead of the polygons doing that themselves as that is not their area of concern.
-
-        \textbf{Builder}\newline
-        This suggets that the creation and assembling of complex objects should be
-        in its own builder object, and thuss a class delegates it's creation to this object.
-        By doing this the construction and representation can be separated, and the
-        same construction process can be used to create different representations.
-
-        \textbf{Mediator}\newline
-        To reduce coupling objects should not communicate directly with each other,
-        but instead communicate through a mediator object.
-
-        \textbf{Publish-Subscribe}\newline
-        This is a messaging pattern where senders of messages, called publishers,
-        do not program the message to be sent directly to specific receivers, called
-        subscribers, but instead categorize published messages into classses without
-        knowledge of hich subscribers there may be. Similarly, subscribers express
-        interest in one or more classes and only recieve mesages that are of interest,
-        without knowledge of which publishers, if there are any.
-    }
-    \ParallelPar
-\end{Parallel}
 \newpage
 
 \begin{center}
@@ -306,85 +258,107 @@
 \begin{Parallel}[v]{0.49\textwidth}{0.49\textwidth}
     \ParallelLText{
         \textbf{Mutability and immutability}\newline
-        Ko
+        Values that can be modified and or not modified(const/final).
 
         \textbf{Refactoring}\newline
-        Ko
+        Alterning internal code without changing its external behavior.
 
         \textbf{Defensive Copying}\newline
-        Ko
+        To ensure immutability, getter methods should return a copy instead of a reference
+        the value in question.
 
         \textbf{Immutable Adapters}\newline
-        Ko
-
-        \textbf{Exceptions}\newline
-        Ko
-
-        \textbf{Method Cascading}\newline
-        Ko
-    }
-    \ParallelRText{
-        \textbf{Mutate-by-copy}\newline
-        Ko
-
-        \textbf{Lambdas and function interfaces}\newline
-        Ko
+        An implementation of the adapter pattern, where an interface is created to only expose
+        immutable and safe methods of the underlying class.
 
         \textbf{Design by contract}\newline
-        Ko
+        This is a designphilosophy where a methods specifications are
+        seen as a contract between the client and the method.\\
+        "If you promise to give me two positive integers,
+        I promise to give you their biggest common divisor."
 
-        \textbf{Algebraic data type and object hierarchy(VG)}\newline
-        Ko
+        \begin{itemize}
+            \item Precondition(Förvilkor): Things that must be\\fullfiled for the method to be called.
+            \item Postcondition(Eftervilkor):
+                  If the precondition\\is not fullfilled there is no guarantee on\\the return.\\
+                  Otherwise the return should be able to be \\guaranteed.
+            \item Invariant: The needed requirements should\\be in a wellformated state.
+        \end{itemize}
+    }
+    \ParallelRText{
+        \textbf{Method Cascading}\newline
+        Calling multiple methods on the same object. For example:\\
+        \fbox{a.b().c();} instead of \fbox{a.b();a.c();}
 
-        \textbf{Streams}\newline
-        Ko
+        \textbf{Mutate-by-copy}\newline
+        Instead of mutating an object's state it should be copied with the new state.
 
-        \textbf{Threads and threadsecurity}\newline
-        Ko
+        \textbf{Lambdas and function interfaces}\newline
+        Short-form replacement for anonymous classes for interfaces with single methods:\\
+        interface k \{
+        int p(double g);
+        \}\\
+        List$<$k$>$ l = new List$<>$();\\
+        l.push((double g) -$>$ {return (int)g;});
 
+        \textbf{Exceptions}\newline
+        An error that is thrown whenever something that should not happen happens.
+        These should be handled using try catches(varies between languages).
     }
     \ParallelPar
 \end{Parallel}
 
-%\newpage
+\newpage
 \begin{center}
     {\huge Polymorphism and code reuse}
 \end{center}
 \begin{Parallel}[v]{0.49\textwidth}{0.49\textwidth}
     \ParallelLText{
         \textbf{Polymorphism}\newline
-        Ko
+        Polymorphism is the provision of a single interface to
+        entities of different types or the use of a single
+        symbol to represent multiple different types.
 
         \textbf{Subtype-polymorphism}\newline
-        Ko
+        Being able to take the superclass or any of its subclasses and still work.\\
+        \fbox{functionThatTakesA(new BThatInheritsA())}
 
         \textbf{Parametric polymorphism}\newline
-        Ko
+        The use of generics, ie \fbox{T extends A}.
 
         \textbf{Ad hoc-polymorphism(VG)}\newline
-        Ko
+        Different types should be able to give defenitions of the same symbol/name without knowing of each other.\\
+        (See operator overloading in C\# and type classes in Haskell)\\
+        Something like this:\\\fbox{$<$T implements +$>$ T add(T x, T y) = x + y;}\\
+        This is however not possible in Java.
 
         \textbf{Co-,contra-, and invariant}\newline
-        Ko
+        Covariant: ? extends T \\
+        Contravariant: ? super T \\
+        Invariant: T (No sub or supertypes)
 
         \textbf{Delegation}\newline
-        Ko
+        Delegation means handing over responsibilities for a task to another class or method.
     }
     \ParallelRText{
         \textbf{Inheritance}\newline
-        Ko
+        Inherting means making a class a subclass of another, and inherting methods and such from the super.
 
         \textbf{Type constructor and type parameter}\newline
-        Ko
+        \fbox{class Box$<$T$>$\{\}}: The T here is a type parameter.
 
         \textbf{Type argument and Wildcards}\newline
-        Ko
+        \fbox{Box$<$Integer$>$ b = new Box$<>$();}:
+        The Integer is in this case a type argument.\\
+        Wildcards are used for creating generic declarations and method calls but not for defining generic type,
+        for example: \fbox{List$<$? extends A$>$} but not \fbox{class A$<$? extends B$>$}!
 
         \textbf{Upper and lower bounds}\newline
-        Ko
+        Upper bound wildcard meands \fbox{? extends Type} and lower bound means \fbox{? super Type}.
 
         \textbf{Get-Put principle}\newline
-        Ko
+        Use \fbox{List$<$? super T$>$} to only be able to put data in the list and
+        \fbox{List$<$? extends T$>$} to be able to get data out of the list.
     }
     \ParallelPar
 \end{Parallel}
