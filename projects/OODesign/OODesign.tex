@@ -134,7 +134,8 @@
         \textbf{Singleton}\newline
         This restricts a class to only be created once.
         This is used to coordinate actions across the whole program easily.
-        Could be considered a "Global State". Often critized however.
+        Could be considered a "Global State". Often critized however as it leads
+        to a lot of tight coupling with the Singleton.
 
         \textbf{Iterator}\newline
         In object-oriented programming, the iterator pattern is a
@@ -142,7 +143,8 @@
         container and access the container's elements.
         The iterator pattern decouples algorithms from containers;
         in some cases, algorithms are necessarily container-specific
-        and thus cannot be decoupled.
+        and thus cannot be decoupled. For example, an object that sorts
+        a list no matter the type of list used.
 
         \textbf{Composite}\newline
         This is a structural pattern where a group of objects are treated in a similar way as a
@@ -154,7 +156,7 @@
 
         \textbf{Facade}\newline
         A facade is an object that serves as a front-facing inteface used to mask
-        more complex underlying code.
+        more complex underlying code. An implementation of the Aggregate pattern.
 
         \textbf{Model-View-Controller}\newline
         \underline{Model}\\
@@ -171,7 +173,10 @@
         Accepts input and converts it to commands for the model or view.
 
         \textbf{Observer}\newline
-        The observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+        The observer pattern is a software design pattern in which an object,
+        named the subject, maintains a list of its dependents, called observers,
+        and notifies them automatically of any state changes, usually by calling
+        one of their methods.
     }
     \ParallelPar
 \end{Parallel}
@@ -183,10 +188,15 @@
 \end{center}
 
 \textbf{Entity}\newline
-Ko
+If we have data stored on disk, using xml for example, we may want to implement an Entity class
+which provides an interface for accessing and manipulating the data while hiding the underlying
+storage parts.\\
+"A design pattern for logically representing data and decoupling the persistance of data from the application view of that data."
 
 \textbf{Aggregate}\newline
-Ko
+Taking a cluster or group of entities and behaviors and treating them as one cohesive unit.
+The cluster has one aggregate root or primary entity, that has the child objects and
+working with them all to implement required behavior.
 
 \textbf{Chain-of-Responsibility}\newline
 The Chain-of-Responsibility pattern consists of a source of command objects
@@ -196,7 +206,7 @@ next procesor in the chain. There should also be a mechanism for adding new proc
 objects to the end of the chain.
 
 
-
+\newpage
 \begin{center}
     {\huge Concepts}
 \end{center}
@@ -204,7 +214,8 @@ objects to the end of the chain.
 \begin{Parallel}[v]{0.49\textwidth}{0.49\textwidth}
     \ParallelLText{
         \textbf{Class and object}\newline
-        The class is like a template for objects.
+        "The class is the template used to create objects." It can also contain
+        its own static methods and fields.
 
         \textbf{Static and dynamic type}\newline
         Static typed languages are those in which type checking is done at compile-time,
@@ -230,28 +241,40 @@ objects to the end of the chain.
         An interface is a form of specification inheritance where what methods a class needs to have
         is defined, similarly an abstract class can do this while also having methods and attributes
         that are inherited. But can be used as a type but neither can be instanced.
+
+        \textbf{Dynamic Binding}\newline
+        Also called late binding, and is when you are overriding public methods when using
+        inheritance as the used method is decided during runtime.\\
+        The opposite of this is static binding which is done with static, private and final methods
+        as they cannot be overriden.
     }
     \ParallelRText{
-        \textbf{Dynamic Binding}\newline
-        Ko
-
         \textbf{Primitive and referencetypes}\newline
-        Ko
+        Primitive types are types such as booleans, integers and floats, and they are stored in the stack.
+        Reference types are types such as Classes, which are stored on the heap, and when passing these
+        around you pass around the reference to it instead of the data itself.
 
         \textbf{Alias}\newline
-        Ko
+        Alias is when two variables point to the same object.
+        (They have a copy of the same reference.)
+        \\
+        \fbox{A a = new A();\\B b = A;}
 
         \textbf{Super and subclass}\newline
-        Ko
+        When inherting or implementing another\\class/interface onto a class, the original class is
+        a\\super class and the other class is a subclass.
 
         \textbf{Overloading and overriding}\newline
-        Ko
+        Overloading means having multiple methodswith the same name, or constructors for that matter,
+        but with different parameters.\\
+        Overriding means replacing an inherited method or constructor with a new implementation
+        (or even using the old one in the new one), also known as dynamic or late binding.
 
         \textbf{Constructor}\newline
-        Ko
+        A specialized method used for initialization of new Objects of a Class.
 
         \textbf{Initialization}\newline
-        Ko
+        This means assigning a value to an attribute or variable, used in constructors for example.
     }
     \ParallelPar
 \end{Parallel}
