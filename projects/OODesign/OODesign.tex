@@ -250,16 +250,17 @@ objects to the end of the chain.
         that are inherited. But can be used as a type but neither can be instanced.
 
         \textbf{Dynamic Binding}\newline
-        Also called late binding, and is when you are overriding public methods when using
-        inheritance as the used method is decided during runtime.\\
+        Also called late binding, and this is done when you are overriding inherited public methods
+        as the method used is decided during runtime.\\
         The opposite of this is static binding which is done with static, private and final methods
         as they cannot be overriden.
     }
     \ParallelRText{
         \textbf{Primitive and referencetypes}\newline
-        Primitive types are types such as booleans, integers and floats, and they are stored in the stack.
-        Reference types are types such as Classes, which are stored on the heap, and when passing these
-        around you pass around the reference to it instead of the data itself.
+        Primitive types are types such as booleans, integers and floats, and they are stored on the stack.\\
+        Reference types are types such as Classes, which are stored on the heap, and when these
+        are passed around you are actually passing around copies of the\\
+        reference to the object in question.
 
         \textbf{Alias}\newline
         Alias is when two variables point to the same object.
@@ -268,12 +269,14 @@ objects to the end of the chain.
         \fbox{A a = new A();\\B b = A;}
 
         \textbf{Super and subclass}\newline
-        When inherting or implementing another\\class/interface onto a class, the original class is
-        a\\super class and the other class is a subclass.
+        When inherting or implementing another\\
+        class/interface onto a class, the implementation is a\\
+        super class and the class implementing said\\
+        class/interface is the subclass.
 
         \textbf{Overloading and overriding}\newline
-        Overloading means having multiple methodswith the same name, or constructors for that matter,
-        but with different parameters.\\
+        Overloading means having multiple methods \\
+        (or constructors) with the same name, but with different arguments.\\
         Overriding means replacing an inherited method or constructor with a new implementation
         (or even using the old one in the new one), also known as dynamic or late binding.
 
@@ -338,7 +341,7 @@ objects to the end of the chain.
         l.push((double g) -$>$ {return (int)g;});
 
         \textbf{Exceptions}\newline
-        An error that is thrown whenever something that should not happen happens.
+        An error that is thrown whenever something that should not happen happens.\\
         These should be handled using try catches(varies between languages).
     }
     \ParallelPar
