@@ -20,64 +20,71 @@
     {\Huge Object Oriented principles and design.}\newline
     {\small I am in pain.}
     \vspace*{\fill}
+    \mbox{}
+    \vfill
+    \begin{flushright}
+        The information contained in this document might not be fully correct.\\
+        If any wrongful information is found please contact me at\\
+        \underline{samuel.hammersberg@gmail.com} and I will correct it.
+    \end{flushright}
 \end{center}
 \newpage
 
 \begin{enumerate}
     \item[\huge{Solid:}]
-          {\huge S}ingle Responsibility Principle (SRP):\newline
-          A class should only have a single responsibility, and only one reason to change.
+        {\huge S}ingle Responsibility Principle (SRP):\newline
+        A class should only have a single responsibility, and only one reason to change.
 
-              {\huge O}pen-Closed Principle (OCP):\newline
-          Objects should be open to extension but closed for modification.
+            {\huge O}pen-Closed Principle (OCP):\newline
+        Objects should be open to extension but closed for modification.
 
-              {\huge L}iskov Substitution Principle (LSP)(VG):\newline
-          Every subclass or derieved class should be able to substitue
-          for their base or super class.
+            {\huge L}iskov Substitution Principle (LSP)(VG):\newline
+        Every subclass or derieved class should be able to substitue
+        for their base or super class.
 
-              {\huge I}nterface Segregation Principle (ISP):\newline
-          A client should never be forced to implement an interface that it doesn't use, nor
-          should clients be forced to depend on methods they do not use. Many
-          client-specific interfaces are better then one general-purpose interface.
+            {\huge I}nterface Segregation Principle (ISP):\newline
+        A client should never be forced to implement an interface that it doesn't use, nor
+        should clients be forced to depend on methods they do not use. Many
+        client-specific interfaces are better then one general-purpose interface.
 
-              {\huge D}ependency Inversion Principle (DIP):\newline
-          One should depend on abstractions, rather than on concretions.
+            {\huge D}ependency Inversion Principle (DIP):\newline
+        One should depend on abstractions, rather than on concretions.
 
     \item[\huge Other:]
-          \textbf{Seperation of Concern} (SoC):\newline
-          Concerns of the software should be split up into individual parts.
-          One should not write their software as one giant block and should instead
-          split the code into smaller more distinctive parts.
+        \textbf{Seperation of Concern} (SoC):\newline
+        Concerns of the software should be split up into individual parts.
+        One should not write their software as one giant block and should instead
+        split the code into smaller more distinctive parts.
 
-          \textbf{Command-Query Separation Principle} (CQSP):\newline
-          A method should either return data or modify data(void in most cases),
-          but not both.\newline
-          Something that breaks this principle is for example the \fbox{pop()} method, that
-          exists for lists in many languages, because it both modifies the list by removing
-          the last index and then it returns that data. This is however allowed because there
-          simply is no better solution.
+        \textbf{Command-Query Separation Principle} (CQSP):\newline
+        A method should either return data or modify data(void in most cases),
+        but not both.\newline
+        Something that breaks this principle is for example the \fbox{pop()} method, that
+        exists for lists in many languages, because it both modifies the list by removing
+        the last index and then it returns that data. This is however allowed because there
+        simply is no better solution.
 
-          \textbf{High Cohesion, Low Coupling} (HCLC):\newline
-          Low Coupling: Modules and classes should be as independent from each other as possible.
-          \newline
-          High Cohesion: Related code should be close together. For example all methods
-          in a module should be related to the modules distinct task.
+        \textbf{High Cohesion, Low Coupling} (HCLC):\newline
+        Low Coupling: Modules and classes should be as independent from each other as possible.
+        \newline
+        High Cohesion: Related code should be close together. For example all methods
+        in a module should be related to the modules distinct task.
 
-          \textbf{Composition over Inheritance} (CoI):\newline
-          Classes should preferably contain other classes that implement needed behavior rather
-          then inheriting behavior.
+        \textbf{Composition over Inheritance} (CoI):\newline
+        Classes should preferably contain other classes that implement needed behavior rather
+        then inheriting behavior.
 
-          \textbf{Law of Demeter} (LoD):\newline
-          To avoid loose coupling classes should only talk to their immediate "friends".\newline
-          For example: instead of writing \fbox{a.b.c.d()} one should do \fbox{a.tellBtoTellCtoDoD()},
-          as one should avoid relying on other classes implementation. This also ties into
-          information hiding, as in for example if something doesn't need to be \fbox{public} it shouldn't
-          be \fbox{public}. Package- or class-private should always be prefered.
+        \textbf{Law of Demeter} (LoD):\newline
+        To avoid loose coupling classes should only talk to their immediate "friends".\newline
+        For example: instead of writing \fbox{a.b.c.d()} one should do \fbox{a.tellBtoTellCtoDoD()},
+        as one should avoid relying on other classes implementation. This also ties into
+        information hiding, as in for example if something doesn't need to be \fbox{public} it shouldn't
+        be \fbox{public}. Package- or class-private should always be prefered.
 
-          \textbf{Defensive Programming} (DP):\newline
-          Software and libraries should be written as if the user \textbf{will} use it wrongly.
-          For example, if data should only gettable instead of settable, a getter method
-          should be implemented and the data should be hidden.
+        \textbf{Defensive Programming} (DP):\newline
+        Software and libraries should be written as if the user \textbf{will} use it wrongly.
+        For example, if data should only gettable instead of settable, a getter method
+        should be implemented and the data should be hidden.
 \end{enumerate}
 \newpage
 
@@ -220,7 +227,7 @@ objects to the end of the chain.
         \textbf{Static and dynamic type}\newline
         Static typed languages are those in which type checking is done at compile-time,
         whereas dynamic typed languages are those in which type checking is
-        done at run-time
+        done at run-time. Left side is static, and dynamic is right side.
 
         \textbf{Encapsulation}\newline
         Encapsulation means wrapping data together as a single unit. Specifically data should also be
@@ -371,7 +378,7 @@ objects to the end of the chain.
     }
     \ParallelRText{
         \textbf{Inheritance}\newline
-        Inherting means making a class a subclass of another, and inherting methods and such from the super.
+        Inheriting means making a class a subclass of another, and inherting methods and such from the super.
 
         \textbf{Type constructor and type parameter}\newline
         \fbox{class Box$<$T$>$\{\}}: The T here is a type parameter.\\
