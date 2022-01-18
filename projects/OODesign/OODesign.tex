@@ -38,7 +38,7 @@
             {\huge O}pen-Closed Principle (OCP):\newline
         Objects should be open to extension but closed for modification.
 
-            {\huge L}iskov Substitution Principle (LSP)(VG):\newline
+            {\huge L}iskov Substitution Principle (LSP):\newline
         Every subclass or derieved class should be able to substitue
         for their base or super class.
 
@@ -79,7 +79,7 @@
         For example: instead of writing \fbox{a.b.c.d()} one should do \fbox{a.tellBtoTellCtoDoD()},
         as one should avoid relying on other classes implementation. This also ties into
         information hiding, as in for example if something doesn't need to be \fbox{public} it shouldn't
-        be \fbox{public}. Package- or class-private should always be prefered.
+        be \fbox{public}. Package- or class-private should always be preferred.
 
         \textbf{Defensive Programming} (DP):\newline
         Software and libraries should be written as if the user \textbf{will} use it wrongly.
@@ -88,129 +88,128 @@
 \end{enumerate}
 \newpage
 
-\begin{center}
-    {\huge Design Patterns}
-\end{center}
-\begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
-    \ParallelLText{
-        \textbf{Template Method}\newline
-        This pattern suggests that you break down your algorithms into smaller steps, and
-        each step is it's own method. These may either be abstract or inheritable, but the idea
-        is that the client supply their own subclasses with their own implementations of the steps.
-
-        \textbf{Bridge}\newline
-        The bridge pattern is a design pattern used
-        in software engineering that is meant to
-        "decouple an abstraction from its implementation
-        so that the two can vary independently".
-        The bridge uses encapsulation, aggregation,
-        and can use inheritance to separate
-        responsibilities into different classes.
-
-
-        \textbf{Strategy}\newline
-        This suggests that algorithms should be able to be selected during runtime.
-        Instead of implenting a single algorithm directly, an algorithms should be abled to be
-        selected during runtime.
-
-        \textbf{State}\newline
-        This allows objects to change their behaviour when its internal state changes. This could be
-        seen as an implementation of the Strategy Pattern.
-
-        \textbf{Decorator}\newline
-        Decorator pattern allows for objects to implement behavior dynamically without
-        affecting other objects of the same class. This can be useful for the Single Responsibility
-        Principle as it allows for objects to have dynamic different areas of concerns, without
-        the need for subtyping.
-
-        \textbf{Adapter}\newline
-        This is used to wrap an interface of another class to be used as another interface.
-        It's used to make existing classes work with each other without modifying their source code.
-
-        \textbf{Factory (Method)}\newline
-        The factory method pattern is a creational pattern
-        that uses factory methods to deal with
-        the problem of creating objects without having to specify
-        the exact class of the object that will be created.
-        This is done by creating objects by calling a factory
-        method—either specified in an interface and implemented
-        by child classes, or implemented in a base class and
-        optionally overridden by derived classes—rather than by calling a constructor.
-    }
-    \ParallelRText{
-        \textbf{Singleton}\newline
-        This restricts a class to only be created once.
-        This is used to coordinate actions across the whole program easily.
-        Could be considered a "Global State". Often critized however as it leads
-        to a lot of tight coupling with the Singleton.
-
-        \textbf{Iterator}\newline
-        In object-oriented programming, the iterator pattern is a
-        design pattern in which an iterator is used to traverse a
-        container and access the container's elements.
-        The iterator pattern decouples algorithms from containers;
-        in some cases, algorithms are necessarily container-specific
-        and thus cannot be decoupled. For example, an object that sorts
-        a list no matter the type of list used.
-
-        \textbf{Composite}\newline
-        This is a structural pattern where a group of objects are treated in a similar way as a
-        single object. This is often represented as a tree structure.
-
-        \textbf{Module}\newline
-        This design pattern is used to wrap a set of function, variables and classes
-        in a module, similarly to packagess in Java.
-
-        \textbf{Facade}\newline
-        A facade is an object that serves as a front-facing inteface used to mask
-        more complex underlying code. An implementation of the Aggregate pattern.
-
-        \textbf{Model-View-Controller}\newline
-        \underline{Model}\\
-        The central component of the pattern.
-        It is the application's dynamic data structure,
-        independent of the user interface.
-        It directly manages the data, logic and rules of the application.\\
-        \underline{View}\\
-        Any representation of information such as a chart,
-        diagram or table. Multiple views of the same
-        information are possible, such as a bar chart
-        for management and a tabular view for accountants.\\
-        \underline{Controller}\\
-        Accepts input and converts it to commands for the model or view.
-
-        \textbf{Observer}\newline
-        The observer pattern is a software design pattern in which an object,
-        named the subject, maintains a list of its dependents, called observers,
-        and notifies them automatically of any state changes, usually by calling
-        one of their methods.
-    }
-    \ParallelPar
-\end{Parallel}
-\newpage
-
-
-\begin{center}
-    {\huge Design Patterns (VG)}
-\end{center}
-
-\textbf{Entity}\newline
-If we have data stored on disk, using xml for example, we may want to implement an Entity class
-which provides an interface for accessing and manipulating the data while hiding the underlying
-storage parts.\\
-"A design pattern for logically representing data and decoupling the persistance of data from the application view of that data."
-
-\textbf{Aggregate}\newline
-Taking a cluster or group of entities and behaviors and treating them as one cohesive unit.
-The cluster has one aggregate root or primary entity, that has the child objects and
-working with them all to implement required behavior.
-
-\textbf{Chain-of-Responsibility}\newline
-The Chain-of-Responsibility pattern consists of a source of command objects
-and a series of processing objects. Each processing objects contains logic that
-defines the types of command objectss that it can handle, and the rest are passed to the
-next procesor in the chain. There should also be a mechanism for adding new processing
-objects to the end of the chain.
+%\begin{center}
+%    {\huge Design Patterns}
+%\end{center}
+%\begin{Parallel}[v]{0.48\textwidth}{0.48\textwidth}
+%    \ParallelLText{
+%        \textbf{Template Method}\newline
+%        This pattern suggests that you break down your algorithms into smaller steps, and
+%        each step is it's own method. These may either be abstract or inheritable, but the idea
+%        is that the client supply their own subclasses with their own implementations of the steps.
+%
+%        \textbf{Bridge}\newline
+%        The bridge pattern is a design pattern used
+%        in software engineering that is meant to
+%        "decouple an abstraction from its implementation
+%        so that the two can vary independently".
+%        The bridge uses encapsulation, aggregation,
+%        and can use inheritance to separate
+%        responsibilities into different classes.
+%
+%
+%        \textbf{Strategy}\newline
+%        This suggests that algorithms should be able to be selected during runtime.
+%        Instead of implementing a single algorithm directly, an algorithms should be abled to be
+%        selected during runtime.
+%
+%        \textbf{State}\newline
+%        This allows objects to change their behavior when its internal state changes. This could be
+%        seen as an implementation of the Strategy Pattern.
+%
+%        \textbf{Decorator}\newline
+%        Decorator pattern allows for objects to implement behavior dynamically without
+%        affecting other objects of the same class. This can be useful for the Single Responsibility
+%        Principle as it allows for objects to have dynamic different areas of concerns, without
+%        the need for subtyping.
+%
+%        \textbf{Adapter}\newline
+%        This is used to wrap an interface of another class to be used as another interface.
+%        It's used to make existing classes work with each other without modifying their source code.
+%
+%        \textbf{Factory (Method)}\newline
+%        The factory method pattern is a creation pattern
+%        that uses factory methods to deal with
+%        the problem of creating objects without having to specify
+%        the exact class of the object that will be created.
+%        This is done by creating objects by calling a factory
+%        method—either specified in an interface and implemented
+%        by child classes, or implemented in a base class and
+%        optionally overridden by derived classes—rather than by calling a constructor.
+%    }
+%    \ParallelRText{
+%        \textbf{Singleton}\newline
+%        This restricts a class to only be created once.
+%        This is used to coordinate actions across the whole program easily.
+%        Could be considered a "Global State". Often criticized however as it leads
+%        to a lot of tight coupling with the Singleton.
+%
+%        \textbf{Iterator}\newline
+%        In object-oriented programming, the iterator pattern is a
+%        design pattern in which an iterator is used to traverse a
+%        container and access the container's elements.
+%        The iterator pattern decouples algorithms from containers;
+%        in some cases, algorithms are necessarily container-specific
+%        and thus cannot be decoupled. For example, an object that sorts
+%        a list no matter the type of list used.
+%
+%        \textbf{Composite}\newline
+%        This is a structural pattern where a group of objects are treated in a similar way as a
+%        single object. This is often represented as a tree structure.
+%
+%        \textbf{Module}\newline
+%        This design pattern is used to wrap a set of function, variables and classes
+%        in a module, similarly to packages in Java.
+%
+%        \textbf{Facade}\newline
+%        A facade is an object that serves as a front-facing interface used to mask
+%        more complex underlying code. An implementation of the Aggregate pattern.
+%
+%        \textbf{Model-View-Controller}\newline
+%        \underline{Model}\\
+%        The central component of the pattern.
+%        It is the application's dynamic data structure,
+%        independent of the user interface.
+%        It directly manages the data, logic and rules of the application.\\
+%        \underline{View}\\
+%        Any representation of information such as a chart,
+%        diagram or table. Multiple views of the same
+%        information are possible, such as a bar chart
+%        for management and a tabular view for accountants.\\
+%        \underline{Controller}\\
+%        Accepts input and converts it to commands for the model or view.
+%
+%        \textbf{Observer}\newline
+%        The observer pattern is a software design pattern in which an object,
+%        named the subject, maintains a list of its dependents, called observers,
+%        and notifies them automatically of any state changes, usually by calling
+%        one of their methods.
+%    }
+%    \ParallelPar
+%\end{Parallel}
+%\newpage
+%
+%\begin{center}
+%    {\huge Design Patterns (VG)}
+%\end{center}
+%
+%\textbf{Entity}\newline
+%If we have data stored on disk, using xml for example, we may want to implement an Entity class
+%which provides an interface for accessing and manipulating the data while hiding the underlying
+%storage parts.\\
+%"A design pattern for logically representing data and decoupling the persistance of data from the application view of that data."
+%
+%\textbf{Aggregate}\newline
+%Taking a cluster or group of entities and behaviors and treating them as one cohesive unit.
+%The cluster has one aggregate root or primary entity, that has the child objects and
+%working with them all to implement required behavior.
+%
+%\textbf{Chain-of-Responsibility}\newline
+%The Chain-of-Responsibility pattern consists of a source of command objects
+%and a series of processing objects. Each processing objects contains logic that
+%defines the types of command objects that it can handle, and the rest are passed to the
+%next processor in the chain. There should also be a mechanism for adding new processing
+%objects to the end of the chain.
 
 
 \newpage
@@ -253,7 +252,7 @@ objects to the end of the chain.
         Also called late binding, and this is done when you are overriding inherited public methods
         as the method used is decided during runtime.\\
         The opposite of this is static binding which is done with static, private and final methods
-        as they cannot be overriden.
+        as they cannot be overridden.
     }
     \ParallelRText{
         \textbf{Primitive and referencetypes}\newline
@@ -269,7 +268,7 @@ objects to the end of the chain.
         \fbox{A a = new A();\\B b = A;}
 
         \textbf{Super and subclass}\newline
-        When inherting or implementing another\\
+        When inheriting or implementing another\\
         class/interface onto a class, the implementation is a\\
         super class and the class implementing said\\
         class/interface is the subclass.
@@ -300,7 +299,7 @@ objects to the end of the chain.
         Values that can be modified and or not modified(const/final).
 
         \textbf{Refactoring}\newline
-        Alterning internal code without changing its external behavior.
+        Altering internal code without changing its external behavior.
 
         \textbf{Defensive Copying}\newline
         To ensure immutability, getter methods should return a copy instead of a reference
@@ -311,17 +310,17 @@ objects to the end of the chain.
         immutable and safe methods of the underlying class.
 
         \textbf{Design by contract}\newline
-        This is a designphilosophy where a methods specifications are
+        This is a design philosophy where a methods specifications are
         seen as a contract between the client and the method.\\
         "If you promise to give me two positive integers,
         I promise to give you their biggest common divisor."
 
         \begin{itemize}
-            \item Precondition(Förvilkor): Things that must be\\fullfiled for the method to be called.
+            \item Precondition(Förvilkor): Things that must be\\fullfil for the method to be called.
             \item Postcondition(Eftervilkor):
-                  If the precondition\\is not fullfilled there is no guarantee on\\the return.\\
+                  If the precondition\\is not fulfilled there is no guarantee on\\the return.\\
                   Otherwise the return should be able to be \\guaranteed.
-            \item Invariant: The needed requirements should\\be in a wellformated state.
+            \item Invariant: The needed requirements should\\be in a well formatted state.
         \end{itemize}
     }
     \ParallelRText{
@@ -365,8 +364,8 @@ objects to the end of the chain.
         \textbf{Parametric polymorphism}\newline
         The use of generics, ie \fbox{T extends A}.
 
-        \textbf{Ad hoc-polymorphism(VG)}\newline
-        Different types should be able to give defenitions of the same symbol/name without knowing of each other.\\
+        \textbf{Ad hoc-polymorphism}\newline
+        Different types should be able to give definitions of the same symbol/name without knowing of each other.\\
         (See operator overloading in C\# and type classes in Haskell)\\
         Something like this:\\\fbox{$<$T implements +$>$ T add(T x, T y) = x + y;}\\
         This is however not possible in Java.
@@ -381,7 +380,7 @@ objects to the end of the chain.
     }
     \ParallelRText{
         \textbf{Inheritance}\newline
-        Inheriting means making a class a subclass of another, and inherting methods and such from the super.
+        Inheriting means making a class a subclass of another, and inheriting methods and such from the super.
 
         \textbf{Type constructor and type parameter}\newline
         \fbox{class Box$<$T$>$\{\}}: The T here is a type parameter.\\
@@ -394,7 +393,7 @@ objects to the end of the chain.
         for example: \fbox{List$<$? extends A$>$} but not \fbox{class A$<$? extends B$>$}!
 
         \textbf{Upper and lower bounds}\newline
-        Upper bound wildcard meands \fbox{? extends Type} and lower bound means \fbox{? super Type}.
+        Upper bound wildcard menads \fbox{? extends Type} and lower bound means \fbox{? super Type}.
 
         \textbf{Get-Put principle}\newline
         Use \fbox{List$<$? super T$>$} to only be able to put data in the list and
