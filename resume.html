@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/c0187d5cbd.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <title>Samuel Hammersberg - loafey.se</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <nav class="navbar">
+            <h1>
+                Samuel Hammersberg
+            </h1>
+        </nav>
+        <div class="main-content">
+            <div class="main-bullet-points">
+                <ul>
+                    <li style="--i: 1">&bull; BSc, Computer Science (2023)</li>
+                    <li style="--i: 2">&bull; MSc, Computer Science<br>&nbsp;&nbsp;&nbsp;(eta Q2/2025)</li>
+                    <li style="--i: 3">&bull; Third, Secret Thing</li>
+                </ul>
+            </div>
+            <div class="main-image">
+                <div>
+                    <img src="https://avatars.githubusercontent.com/u/13640834?v=4" alt="">
+                </div>
+            </div>
+            <div class="main-rest">
+                <div class="buttons">
+                    <button>Home</button>
+                    <button>About</button>
+                    <button>Experiences</button>
+                    <button>Projects</button>
+                    <button>Contact Info</button>
+                </div>
+                <div class="rest">
+                    <div id="home">
+                        <h2>Welcome!</h2>
+                        <p>
+                            Hello and welcome to my website!
+                            <br><br>
+                            Here you can
+                            find all my different projects which are currently
+                            public on GitHub <br>(most projects as of now are sadly
+                            private).
+                            <br><br>
+                            If you are interested in what I do and wanna talk
+                            with me you can reach me at <br>
+                            <a href="mailto:samuel.hammersberg@gmail.com">samuel.hammmersberg@gmail.com</a>
+                            and further ways of contacting me can be found <br>
+                            in the contact section!
+                        </p>
+                    </div>
+                    <div id="about">
+                        <h2>About</h2>
+                        <p>
+                            This needs to be rewritten, but you can read my <a href="/resume.html">CV</a> instead!
+                        </p>
+                    </div>
+                    <div id="experiences">
+                        <h2>Experiences</h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    Aptiv - Student Engineer
+                                </h3>
+                                <p>January 2022 - August 2022</p>
+                                <p>
+                                    Worked with the R&D team. Mainly focused on improving the CI pipeline. <br>
+                                    Mainly worked with Rust, but also got to work with FFI and software such as MatLab
+                                </p>
+                            </li>
+                            <li>
+                                <h3>
+                                    Computer Science Division - President of the board
+                                </h3>
+                                <p>September 2021 - Present</p>
+                                <p>
+                                    Acting president of <a href="https://dvet.se">Computer Science Division student
+                                        organization</a>,<br>
+                                    for the Computer Science bachelor and master program, <br>
+                                    and the Applied Data Science master program at the University of Gothenburg.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="projects">
+                        <h2>Projects</h2>
+                        <p>An excerpt of some of my projects:</p>
+                        <ul>
+                            <li>
+                                <h3>Bachelor Thesis</h3>
+                                <p>
+                                    A typed functional programming language based on System-F. Created by a
+                                    team of six people, <br>
+                                    and I personally spent time working on the
+                                    code generation to LLVM IR.
+
+                                    <a href="https://github.com/samhamnam/churf">Link to repo with thesis</a>.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Advent of Code</h3>
+                                <p>
+                                    My solutions of Advent of Code in Rust, <a
+                                        href="https://github.com/samhamnam/advent_of_code">link to repo</a>.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>rusty_procedure_call</h3>
+                                <p>
+                                    A proof of concept RPC macro for Rust.
+                                    Automatically generates the RPC network code
+                                    for a <br> struct allowing for easy prototyping for
+                                    network interfaces.
+
+                                    <a href="https://github.com/samhamnam/rusty_procedure_call">Link to repo.</a>
+                                </p>
+                            </li>
+                            <li>
+                                <h3>Interior Mutability Pointer</h3>
+                                <p>A highly experimental library for Rust adding a smart pointer which gives you a
+                                    similar pointer<br>
+                                    experience to Java/C#, letting you avoid the cumbersome syntax of
+                                    <code>Rc&lt;RefCell&lt;T&gt;&gt;</code>.
+                                    <br>
+                                    Actually pretty <a
+                                        href="https://github.com/samhamnam/interior_mutability_pointer/issues/2">unsafe</a>
+                                    but a pretty neat concept.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>dvet.se</h3>
+                                <p>
+                                    The site for our student organization. <br>
+                                    The site can be found here at <a href="https://dvet.se">dvet.se</a>,
+                                    and the repository for the site can be found <a
+                                        href="https://github.com/Datavetenskapsdivisionen/dvet.se">here</a>.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>NixOS config</h3>
+                                <p>
+                                    My NixOS config for the nerds.
+                                    <a href="https://github.com/samhamnam/niiix">Link to repo</a>.
+                                </p>
+                            </li>
+                            <li>
+                                <h3>The rest</h3>
+                                The rest of my projects can be found on my <a href="https://github.com/samhamnam">GitHub
+                                    page</a>.
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="contact">
+                        <h2>Contact</h2>
+                        You can find me through the following mediums:
+                        <ul>
+                            <li><i class="fa-brands fa-github"></i> GitHub: <a
+                                    href="https://github.com/samhamnam">samhamnam</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> Mail: <a
+                                    href="mailto:samuel.hammersberg@gmail.com">samuel.hammersberg@gmail.com</a>
+                            </li>
+                            <li><i class="fa-brands fa-discord"></i> Discord: loafey</li>
+                            <li><i class="fa-brands fa-youtube"></i> YouTube: <a
+                                    href="https://www.youtube.com/channel/UCby31OXkxcLZHw-b6tKyytA/">Samuel
+                                    Hammersberg</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
