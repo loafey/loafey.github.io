@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 :root {
-    --border-size: 5px;
+    --border-size: 0px;
+    --border-margin: 5px;
     --hor-padding: 250px;
     --ver-padding: 0px;
     --border-color: var(--c2);
@@ -14,12 +15,26 @@
     --border-color: var(--c3);
     --animation-time: 0.33s;
     --main-content-display-type: grid;
+    --bullet-point-font-size: 2rem;
+    --bullet-point-offset: 40px;
+    --avatar-size: 200px;
+    --nav-button-font-size: 2em;
+    --app-radius: 10px;
+    --image-app-radius: 0 var(--app-radius) var(--app-radius) 0;
+    --bullet-points-app-radius: var(--app-radius) 0 0 var(--app-radius);
 }
 
 @media only screen and (max-width: 1580px) {
     :root {
         --hor-padding: 0px;
         --main-content-display-type: flex;
+        --bullet-point-font-size: 1.1rem;
+        --bullet-point-offset: 10px;
+        --avatar-size: 150px;
+        --nav-button-font-size: 1.1em;
+        --border-margin: 5px;
+        --image-app-radius: var(--app-radius) var(--app-radius) 0 0;
+        --bullet-points-app-radius: 0 0 var(--app-radius) var(--app-radius);
     }
 }
 
@@ -101,24 +116,30 @@ body {
 .navbar {
     position: relative;
     border-right: var(--border-color) var(--border-size) solid;
+    margin-right: var(--border-margin);
     border-bottom: var(--border-color) var(--border-size) solid;
+    margin-bottom: var(--border-margin);
     border-left: var(--border-color) var(--border-size) solid;
-    width: calc(100% - var(--border-size) * 2);
+    margin-left: var(--border-margin);
+    width: calc(100% - var(--border-size) * 2 - var(--border-margin) * 2);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     z-index: 1;
     background-color: var(--cbg);
-    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.25);
-    /* border-radius: 20px 20px 0 0; */
+    color: var(--c0);
+    border-radius: 0 0 var(--app-radius) var(--app-radius);
+}
+
+.navbar span {
+    color: var(--c2);
 }
 
 .main-content {
-    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-    background-color: var(--cbg);
-    border-left: var(--border-color) var(--border-size) solid;
-    border-right: var(--border-color) var(--border-size) solid;
+    /* box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75); */
+    margin-left: var(--border-margin);
+    margin-right: var(--border-margin);
     /* border-bottom: var(--border-color) var(--border-size) solid; */
 
     display: var(--main-content-display-type);
@@ -128,20 +149,25 @@ body {
     /* border-radius: 0 0 20px 20px; */
     overflow-y: scroll;
     overflow-wrap: break-word;
+    border-radius: var(--app-radius);
+    margin-bottom: var(--border-margin);
+    scrollbar-color: var(--c1) transparent;
 }
 
 .main-image {
+    background-color: var(--cbg);
     grid-column: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: var(--image-app-radius);
 }
 
 .main-image div {
     background: linear-gradient(-45deg, #e66465, #9198e5, #e66465);
-    padding: var(--border-size);
-    max-width: calc(300px - var(--border-size) * 2);
-    max-height: calc(300px - var(--border-size) * 2);
+    padding: calc(var(--border-size) + var(--border-margin));
+    width: calc(var(--avatar-size) - var(--border-size) * 2 - var(--border-margin) * 2);
+    height: calc(var(--avatar-size) - var(--border-size) * 2 - var(--border-margin) * 2);
     border-radius: 100%;
     margin-top: 10px;
 }
@@ -157,12 +183,14 @@ body {
 }
 
 .main-bullet-points {
-    font-size: 2.5rem;
+    background-color: var(--cbg);
+    font-size: var(--bullet-point-font-size);
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: 1;
     grid-row: 1;
+    border-radius: var(--bullet-points-app-radius);
 }
 
 .main-bullet-points ul {
@@ -170,7 +198,7 @@ body {
 }
 
 .main-bullet-points li {
-    padding-left: calc(80px - 40px * (3 - var(--i)));
+    padding-left: calc(calc(var(--bullet-point-offset) * 2) - var(--bullet-point-offset) * (3 - var(--i)));
     animation: list-appear 1s calc(0.3s * (var(--i) - 1)), hiding calc(0.3s * (var(--i) - 1));
 }
 
@@ -199,9 +227,12 @@ body {
 }
 
 .main-rest {
-    border-top: var(--border-color) var(--border-size) solid;
+    background-color: var(--cbg);
+    border: var(--border-color) var(--border-size) solid;
+    margin-top: var(--border-margin);
     display: grid;
     grid-template-rows: 64px auto;
+    border-radius: var(--app-radius);
 }
 
 .main-rest .buttons {
@@ -214,7 +245,7 @@ body {
     position: relative;
     background-color: transparent;
     cursor: pointer;
-    font-size: 2em;
+    font-size: var(--nav-button-font-size);
     border: none;
     padding-left: 10px;
     padding-right: 10px;
@@ -232,9 +263,9 @@ body {
 
 .main-rest .buttons button:after {
     position: absolute;
-    height: var(--border-size);
+    height: calc(var(--border-size) + var(--border-margin));
     width: 0%;
-    background-color: var(--c0);
+    background-color: var(--c3);
     content: "";
     left: 0;
     top: 0;
@@ -243,9 +274,9 @@ body {
 
 .main-rest .buttons button:before {
     position: absolute;
-    height: var(--border-size);
+    height: calc(var(--border-size) + var(--border-margin));
     width: 0%;
-    background-color: var(--c0);
+    background-color: var(--c3);
     content: "";
     right: 0;
     bottom: 0;
