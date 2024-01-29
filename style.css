@@ -2,12 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 :root {
-    --cbg: #fff;
     --border-size: 5px;
     --hor-padding: 250px;
     --ver-padding: 0px;
     --border-color: var(--c2);
+    --c0: #eef4d4ff;
+    --c1: #daefb3ff;
+    --c2: #ea9e8dff;
+    --c3: #d64550ff;
+    --cbg: #1c2826ff;
+    --border-color: var(--c3);
     --animation-time: 0.33s;
+    --main-content-display-type: grid;
+}
+
+@media only screen and (max-width: 1580px) {
+    :root {
+        --hor-padding: 0px;
+        --main-content-display-type: flex;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -92,6 +105,7 @@ body {
     border-left: var(--border-color) var(--border-size) solid;
     width: calc(100% - var(--border-size) * 2);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -107,14 +121,17 @@ body {
     border-right: var(--border-color) var(--border-size) solid;
     /* border-bottom: var(--border-color) var(--border-size) solid; */
 
-    display: grid;
+    display: var(--main-content-display-type);
+    flex-direction: column;
     grid-template-columns: auto auto;
     grid-template-rows: 400px auto;
     /* border-radius: 0 0 20px 20px; */
     overflow-y: scroll;
+    overflow-wrap: break-word;
 }
 
 .main-image {
+    grid-column: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +143,7 @@ body {
     max-width: calc(300px - var(--border-size) * 2);
     max-height: calc(300px - var(--border-size) * 2);
     border-radius: 100%;
+    margin-top: 10px;
 }
 
 .main-image img {
@@ -140,10 +158,11 @@ body {
 
 .main-bullet-points {
     font-size: 2.5rem;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .main-bullet-points ul {
@@ -188,6 +207,7 @@ body {
 .main-rest .buttons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .main-rest .buttons button {
