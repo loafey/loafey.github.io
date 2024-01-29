@@ -22,7 +22,7 @@
     --app-radius: 10px;
     --image-app-radius: 0 var(--app-radius) var(--app-radius) 0;
     --bullet-points-app-radius: var(--app-radius) 0 0 var(--app-radius);
-    --max-content-width: 937px;
+    --max-content-width: 1100px;
 }
 
 @media only screen and (max-width: 1580px) {
