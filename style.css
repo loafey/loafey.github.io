@@ -22,6 +22,7 @@
     --app-radius: 10px;
     --image-app-radius: 0 var(--app-radius) var(--app-radius) 0;
     --bullet-points-app-radius: var(--app-radius) 0 0 var(--app-radius);
+    --max-content-width: 937px;
 }
 
 @media only screen and (max-width: 1580px) {
@@ -105,9 +106,8 @@ body {
     position: absolute;
     display: grid;
     grid-template-rows: 96px auto;
-    width: calc(100% - var(--hor-padding) * 2);
-    padding-left: var(--hor-padding);
-    padding-right: var(--hor-padding);
+    justify-items: center;
+    width: calc(100%);
     height: calc(100% - var(--ver-padding) * 2);
     padding-top: var(--ver-padding);
     padding-bottom: var(--ver-padding);
@@ -122,6 +122,7 @@ body {
     border-left: var(--border-color) var(--border-size) solid;
     margin-left: var(--border-margin);
     width: calc(100% - var(--border-size) * 2 - var(--border-margin) * 2);
+    max-width: var(--max-content-width);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -138,6 +139,8 @@ body {
 
 .main-content {
     /* box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75); */
+    max-width: var(--max-content-width);
+    width: calc(100% - var(--border-size) * 2 - var(--border-margin) * 2);
     margin-left: var(--border-margin);
     margin-right: var(--border-margin);
     /* border-bottom: var(--border-color) var(--border-size) solid; */
