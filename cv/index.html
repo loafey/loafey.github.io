@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>A4</title>
+    <title>Resume - Samuel Hammersberg</title>
+    <script src="https://kit.fontawesome.com/c0187d5cbd.js" crossorigin="anonymous"></script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
@@ -12,6 +14,7 @@
     <script src="../resources/projects.js"></script>
     <script src="../resources/experiences.js"></script>
     <script src="../resources/other-experiences.js"></script>
+    <script src="../resources/education.js"></script>
 
     <style>
         @page {
@@ -23,31 +26,117 @@
 <body class="A4">
     <section class="sheet padding-10mm">
         <article>
+            <div class="page-count">1</div>
+
             <div class="title">
                 Samuel <b>Hammersberg</b><br>
                 BSc, Computer Science
             </div>
             <hr>
 
+            <div class="top-buttons">
+                <span>
+                    <i class="fa-solid fa-globe"></i>
+                    <a href="https://loafey.se">loafey.se</a>
+                </span>
+                <span>
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/samhamnam">GitHub</a>
+                </span>
+                <span>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/samuel-hammersberg-b04760224/">LinkedIn</a>
+                </span>
+            </div>
+
+            <div class="top-buttons">
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:samuel.hammersberg@gmail.com">samuel.hammersberg@gmail.com</a>
+                </span>
+            </div>
+
             <div>
                 <h3>ABOUT ME</h3>
+                <p>
+                    I am fourth year student studying computer science at the University of Gothenburg. I have a
+                    bachelor degree in Computer
+                    Science from the department of Computer Science and Engineering at GU/Chalmers. I am currently
+                    taking a master degree
+                    at the same department.
+                </p>
             </div>
             <div>
                 <h3>EDUCATION</h3>
+                <div id="education-list"></div>
             </div>
             <div>
                 <h3>SKILLS</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px">
+                    <div class="skills-list">
+                        <h4><b>Programming Languages</b></h4>
+                        <div class="skills-list-lang" style="border-bottom: 2px solid gray;">
+                            <span>Language</span>
+                            <span>Skill level</span>
+                        </div>
+                        <div class="skills-list-lang">
+                            <span>Rust</span>
+                            <div class="skill-bar" style="--i: 90%"></div>
+                        </div>
+                        <div class="skills-list-lang">
+                            <span>Java</span>
+                            <div class="skill-bar" style="--i: 70%"></div>
+                        </div>
+                        <div class="skills-list-lang">
+                            <span>C#</span>
+                            <div class="skill-bar" style="--i: 70%"></div>
+                        </div>
+                        <div class="skills-list-lang">
+                            <span>JavaScript</span>
+                            <div class="skill-bar" style="--i: 50%"></div>
+                        </div>
+                        <div class="skills-list-lang">
+                            <span>Others</span>
+                            <span>Python, Haskell, C, C++, SQL, HTML, CSS</a>
+                        </div>
+                    </div>
+                    <div class="skills-list">
+                        <h4><b>Tools/Other</b></h4>
+                        <div class="skills-list-lang" style="border-bottom: 2px solid gray;">
+                            <span>&nbsp;</span>
+                        </div>
+                        <div class="skills-list-tools">
+                            <p>
+                                Linux, Windows, Windows Subsystem for Linux, LATEX,
+                                Git, Visual Studio Code
+                            </p>
+                        </div>
+                        <div class="skills-list-tools">
+                            <p>
+                                IntelliJ Idea, Vim, Build Tools(Cargo, Cabal, NPM/Yarn,
+                                Maven, Make)
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </article>
+    </section>
+
+    <section class="sheet padding-10mm">
+        <article>
+            <div class="page-count">2</div>
             <div>
                 <h3>WORK EXPERIENCE</h3>
+                <div id="experiences-list"></div>
             </div>
             <div>
                 <h3>OTHER EXPERIENCE</h3>
                 <div id="other-experiences-list"></div>
                 <h4><b>Projects</b> <span class="orange">|</span>
                     A selection of my own and university projects</h4>
-                <div class="projects-table" id="projects-table">
-                    <div class="projects-table-row projects-table-top">
+                <div class="table" id="projects-table">
+                    <div class="experience-table-row table-top">
                         <p style="text-align: center;">Project</p>
                         <p style="text-align: center;">Language</p>
                         <p>Description</p>
@@ -60,15 +149,18 @@
     <script>
         let projectsTable = document.getElementById("projects-table");
         let otherExperiencesList = document.getElementById("other-experiences-list");
+        let experiencesList = document.getElementById("experiences-list");
+        let educationList = document.getElementById("education-list");
 
         const ExperienceFunc = (parent, elem) => {
             let li = document.createElement("div");
+            li.classList.add("work-experience");
 
             let title = document.createElement("h4");
             title.innerHTML = `<b>${elem.title}</b> <span class="orange">|</span> ${elem.subtitle}`;
             li.appendChild(title);
 
-            let date = document.createElement("p");
+            let date = document.createElement("span");
             date.innerText = elem.date;
             li.appendChild(date);
 
@@ -79,11 +171,13 @@
             parent.appendChild(li);
         };
 
+        EXPERIENCES.forEach((elem) => ExperienceFunc(experiencesList, elem));
         OTHER_EXPERIENCES.forEach((elem) => ExperienceFunc(otherExperiencesList, elem));
+        EDUCATION.forEach((elem) => ExperienceFunc(educationList, elem));
 
         PROJECT_LIST.slice(0, 5).forEach((elem) => {
             let div = document.createElement("div");
-            div.classList.add("projects-table-row");
+            div.classList.add("experience-table-row");
 
             let title = null;
             if (elem.link) {

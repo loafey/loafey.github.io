@@ -7,6 +7,30 @@
     text-align: center;
 }
 
+* {
+    color: rgb(49, 49, 49);
+}
+
+.page-count {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    right: 10mm;
+    bottom: 10mm;
+}
+
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
 h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
@@ -18,33 +42,59 @@ h4 {
     font-weight: 100;
 }
 
+.work-experience {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-columns: auto min-content;
+}
+
+.work-experience span {
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.work-experience p {
+    font-size: 0.9rem;
+}
+
+.work-experience h4 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.work-experience p {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .orange {
     color: orangered
 }
 
-.projects-table {
+.table {
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
 }
 
-.projects-table div:nth-child(odd) {
+.table div:nth-child(odd) {
     background-color: rgb(220, 220, 220);
 }
 
-.projects-table div:nth-child(even) {
+.table div:nth-child(even) {
     background-color: rgb(241, 241, 241);
 }
 
-.projects-table-row {
+.experience-table-row {
     display: grid;
     grid-template-columns: 128px 96px auto;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.projects-table-row p,
-.projects-table-row a {
+
+.experience-table-row p,
+.experience-table-row a {
     font-size: 0.9rem;
     margin-bottom: 6px;
     margin-top: 6px;
@@ -52,11 +102,77 @@ h4 {
 
 a,
 a:visited {
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: orangered
 }
 
-.projects-table-top {
+.skills-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-list div:nth-child(odd) {
+    background-color: rgb(220, 220, 220);
+}
+
+.skills-list div:nth-child(even) {
+    background-color: rgb(241, 241, 241);
+}
+
+.skills-list span,
+.skills-list p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.skills-list .skills-list-lang {
+    display: grid;
+    grid-template-columns: 78px auto;
+    column-gap: 10px;
+    align-items: center;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.skills-list .skills-list-tools {
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+
+
+.skills-list h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    background-color: rgb(241, 241, 241);
+    padding: 5px;
+}
+
+.skill-bar {
+    height: calc(100% - 10px);
+    width: calc(var(--i) - 6px);
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    background: repeating-linear-gradient(90deg,
+            #606dbc,
+            #606dbc 22.5px,
+            #465298 22.5px,
+            #465298 25.5px);
+    border: #465298 3px solid;
+    /* background-repeat: no-repeat; */
+    /* background-size: 50% 50%; */
+    /* background: rgb(0, 0, 0); */
+    /* background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(174, 230, 245, 1) 1%, rgba(174, 230, 245, 1) 99%, rgba(0, 0, 0, 1) 100%) no-repeat bottom; */
+}
+
+.table-top {
     background-color: rgb(190, 190, 190) !important;
     border-bottom: 2px solid gray;
 }
