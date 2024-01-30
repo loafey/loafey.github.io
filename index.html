@@ -10,6 +10,7 @@
     <script src="resources/projects.js"></script>
     <script src="resources/experiences.js"></script>
     <script src="resources/other-experiences.js"></script>
+    <script src="resources/education.js"></script>
 
     <meta property="og:title" content="Samuel Hammersberg - loafey.se" />
     <meta property="og:type" content="website" />
@@ -42,7 +43,7 @@
             <div class="main-rest">
                 <div class="buttons">
                     <button onclick="document.getElementById('home').scrollIntoView();">Home</button>
-                    <button onclick="document.getElementById('about').scrollIntoView();">About</button>
+                    <button onclick="document.getElementById('education').scrollIntoView();">Education</button>
                     <button onclick="document.getElementById('experiences').scrollIntoView();">Experiences</button>
                     <button onclick="document.getElementById('projects').scrollIntoView();">Projects</button>
                     <button onclick="document.getElementById('contact').scrollIntoView();">Contact Info</button>
@@ -53,10 +54,8 @@
                         <p>
                             Hello and welcome to my website!
                             <br><br>
-                            Here you can
-                            find all my different projects which are currently
-                            public on GitHub (most projects as of now are sadly
-                            private).
+                            Here you can find some of my work, my <a href="/resume.html">resume</a>, and some info
+                            about my work and education!
                             <br><br>
                             If you are interested in what I do and wanna talk
                             with me you can reach me at
@@ -65,11 +64,10 @@
                             in the contact section!
                         </p>
                     </div>
-                    <div id="about">
-                        <h2>About</h2>
-                        <p>
-                            This needs to be rewritten, but you can read my <a href="/resume.html">resume</a> instead!
-                        </p>
+                    <div id="education">
+                        <h2>Education</h2>
+                        <ul id="education-list">
+                        </ul>
                     </div>
                     <div id="experiences">
                         <h2>Experiences</h2>
@@ -129,7 +127,7 @@
             let li = document.createElement("li");
 
             let title = document.createElement("h3");
-            title.innerText = `${elem.title} - ${elem.subtitle}`;
+            title.innerText = `${elem.title} | ${elem.subtitle}`;
             li.appendChild(title);
 
             let date = document.createElement("p");
@@ -141,6 +139,25 @@
             li.appendChild(desc);
 
             experiencesList.appendChild(li);
+        });
+
+        let educationList = document.getElementById("education-list");
+        EDUCATION.forEach((elem) => {
+            let li = document.createElement("li");
+
+            let title = document.createElement("h3");
+            title.innerText = `${elem.title} | ${elem.subtitle}`;
+            li.appendChild(title);
+
+            let date = document.createElement("p");
+            date.innerText = elem.date;
+            li.appendChild(date);
+
+            let desc = document.createElement("p");
+            desc.innerHTML = elem.description;
+            li.appendChild(desc);
+
+            educationList.appendChild(li);
         });
     </script>
 </body>

@@ -1,6 +1,14 @@
 const EDUCATION = [
     {
         title: "Computer Science",
+        subtitle: "Master - University of Gothenburg",
+        date: "August 2023 - June 2025(eta)",
+        description: `
+        Currently studying my master degree! 
+        `
+    },
+    {
+        title: "Computer Science",
         subtitle: "Bachelor - University of Gothenburg",
         date: "August 2020 - June 2023",
         description: `
