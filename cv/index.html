@@ -56,11 +56,18 @@
 
     <script>
         let projectsTable = document.getElementById("projects-table");
-        PROJECT_LIST.forEach((elem) => {
+        PROJECT_LIST.slice(0, 5).forEach((elem) => {
             let div = document.createElement("div");
             div.classList.add("projects-table-row");
 
-            let title = document.createElement("p");
+            let title = null;
+            if (elem.link) {
+                title = document.createElement("a");
+                title.href = elem.link;
+            } else {
+                title = document.createElement("p");
+
+            }
             title.style.textAlign = "center";
             title.innerText = elem.title;
 

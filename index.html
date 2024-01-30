@@ -53,13 +53,13 @@
                             <br><br>
                             Here you can
                             find all my different projects which are currently
-                            public on GitHub <br>(most projects as of now are sadly
+                            public on GitHub (most projects as of now are sadly
                             private).
                             <br><br>
                             If you are interested in what I do and wanna talk
-                            with me you can reach me at <br>
+                            with me you can reach me at
                             <a href="mailto:samuel.hammersberg@gmail.com">samuel.hammmersberg@gmail.com</a>
-                            and further ways of contacting me can be found <br>
+                            and further ways of contacting me can be found
                             in the contact section!
                         </p>
                     </div>
@@ -78,7 +78,7 @@
                                 </h3>
                                 <p>January 2022 - August 2022</p>
                                 <p>
-                                    Worked with the R&D team. Mainly focused on improving the CI pipeline. <br>
+                                    Worked with the R&D team. Mainly focused on improving the CI pipeline.
                                     Mainly worked with Rust, but also got to work with FFI and software such as MatLab
                                 </p>
                             </li>
@@ -86,9 +86,9 @@
                                 <h3>
                                     Teacher Assistant
                                 </h3>
-                                <p>Multiple occasions</p>
-                                <p>Worked as a TA multiple times in beginner courses in Python, and once in a<br>
-                                    beginner course in functional programming.</p>
+                                <p>2021-2023 Multiple occasions</p>
+                                Worked as a TA multiple times in beginner courses in Python, and once in a
+                                beginner course in functional programming.
                             </li>
                             <li>
                                 <h3>
@@ -97,8 +97,8 @@
                                 <p>September 2021 - Present</p>
                                 <p>
                                     Acting chairman of <a href="https://dvet.se">Computer Science Division student
-                                        organization</a>,<br>
-                                    for the Computer Science bachelor and master program, <br>
+                                        organization</a>,
+                                    for the Computer Science bachelor and master program,
                                     and the Applied Data Science master program at the University of Gothenburg.
                                 </p>
                             </li>
@@ -135,7 +135,14 @@
             let li = document.createElement("li");
 
             let title = document.createElement("h3");
-            title.innerText = elem.title;
+            title.innerText = elem.title + " ";
+            if (elem.link) {
+                let a = document.createElement("a");
+                a.style.opacity = 0.4;
+                a.innerText = "<link/>";
+                a.href = elem.link;
+                title.appendChild(a);
+            }
             li.appendChild(title);
 
             let content = document.createElement("p");
