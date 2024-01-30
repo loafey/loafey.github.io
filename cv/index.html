@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="./cv.css">
     <script src="../resources/projects.js"></script>
+    <script src="../resources/experiences.js"></script>
+    <script src="../resources/other-experiences.js"></script>
 
     <style>
         @page {
@@ -41,6 +43,7 @@
             </div>
             <div>
                 <h3>OTHER EXPERIENCE</h3>
+                <div id="other-experiences-list"></div>
                 <h4><b>Projects</b> <span class="orange">|</span>
                     A selection of my own and university projects</h4>
                 <div class="projects-table" id="projects-table">
@@ -56,6 +59,28 @@
 
     <script>
         let projectsTable = document.getElementById("projects-table");
+        let otherExperiencesList = document.getElementById("other-experiences-list");
+
+        const ExperienceFunc = (parent, elem) => {
+            let li = document.createElement("div");
+
+            let title = document.createElement("h4");
+            title.innerHTML = `<b>${elem.title}</b> <span class="orange">|</span> ${elem.subtitle}`;
+            li.appendChild(title);
+
+            let date = document.createElement("p");
+            date.innerText = elem.date;
+            li.appendChild(date);
+
+            let desc = document.createElement("p");
+            desc.innerHTML = elem.description;
+            li.appendChild(desc);
+
+            parent.appendChild(li);
+        };
+
+        OTHER_EXPERIENCES.forEach((elem) => ExperienceFunc(otherExperiencesList, elem));
+
         PROJECT_LIST.slice(0, 5).forEach((elem) => {
             let div = document.createElement("div");
             div.classList.add("projects-table-row");

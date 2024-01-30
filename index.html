@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
     <script src="resources/projects.js"></script>
+    <script src="resources/experiences.js"></script>
+    <script src="resources/other-experiences.js"></script>
 
     <meta property="og:title" content="Samuel Hammersberg - loafey.se" />
     <meta property="og:type" content="website" />
@@ -71,37 +73,7 @@
                     </div>
                     <div id="experiences">
                         <h2>Experiences</h2>
-                        <ul>
-                            <li>
-                                <h3>
-                                    Aptiv - Student Engineer
-                                </h3>
-                                <p>January 2022 - August 2022</p>
-                                <p>
-                                    Worked with the R&D team. Mainly focused on improving the CI pipeline.
-                                    Mainly worked with Rust, but also got to work with FFI and software such as MatLab
-                                </p>
-                            </li>
-                            <li>
-                                <h3>
-                                    Teacher Assistant
-                                </h3>
-                                <p>2021-2023 Multiple occasions</p>
-                                Worked as a TA multiple times in beginner courses in Python, and once in a
-                                beginner course in functional programming.
-                            </li>
-                            <li>
-                                <h3>
-                                    Computer Science Division - Chairman of the board
-                                </h3>
-                                <p>September 2021 - Present</p>
-                                <p>
-                                    Acting chairman of <a href="https://dvet.se">Computer Science Division student
-                                        organization</a>,
-                                    for the Computer Science bachelor and master program,
-                                    and the Applied Data Science master program at the University of Gothenburg.
-                                </p>
-                            </li>
+                        <ul id="experiences-list">
                         </ul>
                     </div>
                     <div id="projects">
@@ -150,6 +122,25 @@
             li.appendChild(content);
 
             projectsList.appendChild(li);
+        });
+
+        let experiencesList = document.getElementById("experiences-list");
+        EXPERIENCES.concat(OTHER_EXPERIENCES).forEach((elem) => {
+            let li = document.createElement("li");
+
+            let title = document.createElement("h3");
+            title.innerText = `${elem.title} - ${elem.subtitle}`;
+            li.appendChild(title);
+
+            let date = document.createElement("p");
+            date.innerText = elem.date;
+            li.appendChild(date);
+
+            let desc = document.createElement("p");
+            desc.innerHTML = elem.description;
+            li.appendChild(desc);
+
+            experiencesList.appendChild(li);
         });
     </script>
 </body>
