@@ -7,6 +7,7 @@
     <title>Samuel Hammersberg - loafey.se</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
+    <script src="resources/projects.js"></script>
 
     <meta property="og:title" content="Samuel Hammersberg - loafey.se" />
     <meta property="og:type" content="website" />
@@ -106,69 +107,7 @@
                     <div id="projects">
                         <h2>Projects</h2>
                         <p>An excerpt of some of my projects:</p>
-                        <ul>
-                            <li>
-                                <h3>Bachelor Thesis</h3>
-                                <p>
-                                    A typed functional programming language based on System-F. Created by a
-                                    team of six people, <br>
-                                    and I personally spent time working on the
-                                    code generation to LLVM IR.
-
-                                    <a href="https://github.com/samhamnam/churf">Link to repo with thesis</a>.
-                                </p>
-                            </li>
-                            <li>
-                                <h3>Advent of Code</h3>
-                                <p>
-                                    My solutions of Advent of Code in Rust, <a
-                                        href="https://github.com/samhamnam/advent_of_code">link to repo</a>.
-                                </p>
-                            </li>
-                            <li>
-                                <h3>rusty_procedure_call</h3>
-                                <p>
-                                    A proof of concept RPC macro for Rust.
-                                    Automatically generates the RPC network code
-                                    for a <br> struct allowing for easy prototyping for
-                                    network interfaces.
-
-                                    <a href="https://github.com/samhamnam/rusty_procedure_call">Link to repo.</a>
-                                </p>
-                            </li>
-                            <li>
-                                <h3>Interior Mutability Pointer</h3>
-                                <p>A highly experimental library for Rust adding a smart pointer which gives you a
-                                    similar pointer<br>
-                                    experience to Java/C#, letting you avoid the cumbersome syntax of
-                                    <code>Rc&lt;RefCell&lt;T&gt;&gt;</code>.
-                                    <br>
-                                    Actually pretty <a
-                                        href="https://github.com/samhamnam/interior_mutability_pointer/issues/2">unsafe</a>
-                                    but a pretty neat concept.
-                                </p>
-                            </li>
-                            <li>
-                                <h3>dvet.se</h3>
-                                <p>
-                                    The site for our student organization. <br>
-                                    The site can be found here at <a href="https://dvet.se">dvet.se</a>,
-                                    and the repository for the site can be found <a
-                                        href="https://github.com/Datavetenskapsdivisionen/dvet.se">here</a>.
-                                </p>
-                            </li>
-                            <li>
-                                <h3>NixOS config</h3>
-                                <p>
-                                    My NixOS config for the nerds.
-                                    <a href="https://github.com/samhamnam/niiix">Link to repo</a>.
-                                </p>
-                            </li>
-                            <li>
-                                <h3>The rest</h3>
-                                The rest of my projects can be found on my <a href="https://github.com/samhamnam">GitHub
-                                    page</a>.
-                            </li>
+                        <ul id="projects-list">
                         </ul>
                     </div>
                     <div id="contact">
@@ -190,6 +129,22 @@
             </div>
         </div>
     </div>
+    <script>
+        let projectsList = document.getElementById("projects-list");
+        PROJECT_LIST.forEach((elem) => {
+            let li = document.createElement("li");
+
+            let title = document.createElement("h3");
+            title.innerText = elem.title;
+            li.appendChild(title);
+
+            let content = document.createElement("p");
+            content.innerHTML = elem.content;
+            li.appendChild(content);
+
+            projectsList.appendChild(li);
+        });
+    </script>
 </body>
 
 </html>

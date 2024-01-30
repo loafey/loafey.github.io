@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
 
     <link rel="stylesheet" href="./cv.css">
+    <script src="../resources/projects.js"></script>
 
     <style>
         @page {
@@ -40,10 +41,43 @@
             </div>
             <div>
                 <h3>OTHER EXPERIENCE</h3>
+                <h4><b>Projects</b> <span class="orange">|</span>
+                    A selection of my own and university projects</h4>
+                <div class="projects-table" id="projects-table">
+                    <div class="projects-table-row projects-table-top">
+                        <p style="text-align: center;">Project</p>
+                        <p style="text-align: center;">Language</p>
+                        <p>Description</p>
+                    </div>
+                </div>
             </div>
         </article>
     </section>
 
+    <script>
+        let projectsTable = document.getElementById("projects-table");
+        PROJECT_LIST.forEach((elem) => {
+            let div = document.createElement("div");
+            div.classList.add("projects-table-row");
+
+            let title = document.createElement("p");
+            title.style.textAlign = "center";
+            title.innerText = elem.title;
+
+            let language = document.createElement("p");
+            language.style.textAlign = "center";
+            language.innerText = elem.language;
+
+            let description = document.createElement("p");
+            description.innerHTML = elem.content;
+
+            div.appendChild(title);
+            div.appendChild(language);
+            div.appendChild(description);
+
+            projectsTable.appendChild(div);
+        })
+    </script>
 </body>
 
 </html>

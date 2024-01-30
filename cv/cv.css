@@ -17,3 +17,42 @@ h3 {
     font-weight: 100;
     font-size: 1.5rem;
 }
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.orange {
+    color: orangered
+}
+
+.projects-table {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-table:nth-child(odd) .projects-table-row {
+    background-color: rgb(241, 241, 241);
+}
+
+.projects-table:nth-child(even) .projects-table-row {
+    background-color: green;
+}
+
+.projects-table-row {
+    display: grid;
+    grid-template-columns: 128px 96px auto;
+}
+
+.projects-table-row p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.projects-table-top {
+    background-color: rgb(241, 241, 241);
+    border-bottom: 1px solid gray;
+}
