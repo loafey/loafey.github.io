@@ -2,7 +2,7 @@ const PROJECT_LIST = [
     {
         title: "Bachelor Thesis",
         language: "Haskell",
-        link: "https://github.com/samhamnam/churf",
+        link: "https://github.com/loafey/churf",
         content: `A typed functional programming language based on System-F. Created by a
         team of six people, 
         and I personally spent time working on the
@@ -10,12 +10,12 @@ const PROJECT_LIST = [
     },
     {
         title: "Advent of Code", language: "Rust",
-        link: "https://github.com/samhamnam/advent_of_code",
+        link: "https://github.com/loafey/advent_of_code",
         content: `My solutions of Advent of Code in Rust.`
     },
     {
         title: "rusty_procedure_call", language: "Rust",
-        link: "https://github.com/samhamnam/rusty_procedure_call",
+        link: "https://github.com/loafey/rusty_procedure_call",
         content: `A proof of concept RPC macro for Rust.
         Automatically generates the RPC network code
         for a  struct allowing for easy prototyping for
@@ -23,14 +23,14 @@ const PROJECT_LIST = [
     },
     {
         title: "Interior Mutability Pointer", language: "Rust",
-        link: "https://github.com/samhamnam/interior_mutability_pointer",
+        link: "https://github.com/loafey/interior_mutability_pointer",
         content: `A highly experimental library for Rust adding a smart pointer which gives you a
         similar pointer
         experience to Java/C#, letting you avoid the cumbersome syntax of
         <code>Rc&lt;RefCell&lt;T&gt;&gt;</code>.
         
         Actually pretty <a
-            href="https://github.com/samhamnam/interior_mutability_pointer/issues/2">unsafe</a>
+            href="https://github.com/loafey/interior_mutability_pointer/issues/2">unsafe</a>
         but a pretty neat concept.`
     },
     {
@@ -41,12 +41,12 @@ const PROJECT_LIST = [
     },
     {
         title: "NixOS config", language: "Nix",
-        link: "https://github.com/samhamnam/niiix",
+        link: "https://github.com/loafey/niiix",
         content: `My NixOS config for the nerds.`
     },
     {
         title: "The rest", language: "", link: null,
-        content: `The rest of my projects can be found on my <a href="https://github.com/samhamnam">GitHub
+        content: `The rest of my projects can be found on my <a href="https://github.com/loafey">GitHub
         page</a>.`
     },
 ];
