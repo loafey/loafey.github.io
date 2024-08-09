@@ -7,11 +7,18 @@ const PROJECT_LIST = [
         team of six people, 
         and I personally spent time working on the
         code generation to LLVM IR.`
-    },
+    }, ,
     {
         title: "Advent of Code", language: "Rust",
         link: "https://github.com/loafey/advent_of_code",
         content: `My solutions of Advent of Code in Rust.`
+    },
+    {
+        title: "logiko", language: "Rust",
+        link: "https://github.com/loafey/logiko",
+        content: `A puzzle game made where you solve Fitch style natural deduction proofs.
+            Can be found over at <a href="https://loafey.se/logiko/">loafey.se/logiko/<a>
+        `
     },
     {
         title: "rusty_procedure_call", language: "Rust",
