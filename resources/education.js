@@ -14,7 +14,7 @@ const EDUCATION = [
         description: `
         The courses were mainly focused on programming and mathematics:
         <ul>
-            <li>Object Oriented & Functional programming</li>
+            <li>Object Oriented & functional programming</li>
             <li>Project work in larger teams</li>
             <li>Computer networking, parallel & concurrent programming</li>
             <li>Data structures & algorithms</li>
