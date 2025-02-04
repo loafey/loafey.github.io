@@ -7,7 +7,20 @@ const PROJECT_LIST = [
         team of six people, 
         and I personally spent time working on the
         code generation to LLVM IR.`
-    }, ,
+    },
+    {
+        title: "WASP",
+        language: "Rust",
+        link: "https://github.com/loafey/wasp",
+        content: `An experimental (mostly and soon) spec compliant WASM runtime written in Rust.`
+    },
+    {
+        title: "Ondth",
+        language: "Rust",
+        link: "https://github.com/loafey/ondth",
+        content: `An experimental multiplayer shooter that allows for level scripting 
+            using arbitrary languages compiled to WebAssembly.`
+    },
     {
         title: "Advent of Code", language: "Rust",
         link: "https://github.com/loafey/advent_of_code",

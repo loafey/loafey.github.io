@@ -11,6 +11,16 @@
     color: rgb(49, 49, 49);
 }
 
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 16px;
+}
+
+.columns-border {
+    background-color: rgba(255, 68, 0, 0.336);
+}
+
 .page-count {
     font-family: 'Roboto', sans-serif;
     position: absolute;
@@ -26,6 +36,10 @@
     font-size: 1.2rem;
 }
 
+ul {
+    padding-left: 1rem;
+}
+
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
@@ -35,6 +49,7 @@ h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 1.5rem;
+    line-height: 0.5rem;
 }
 
 h4 {
@@ -45,26 +60,30 @@ h4 {
 .work-experience {
     font-family: 'Roboto', sans-serif;
     display: grid;
+    grid-template-columns: 152px auto;
+}
+
+#other-experiences-list>.work-experience {
     grid-template-columns: auto min-content;
 }
 
 .work-experience span {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     white-space: nowrap;
+    /* border-left: orangered 2px solid; */
+    padding-left: 4px;
 }
 
 .work-experience p {
     font-size: 0.9rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .work-experience h4 {
     font-size: 1.1rem;
     margin: 0;
-}
-
-.work-experience p {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    line-height: 2rem;
 }
 
 .orange {
@@ -143,8 +162,6 @@ a:visited {
     padding-top: 2.5px;
     padding-bottom: 2.5px;
 }
-
-
 
 .skills-list h4 {
     margin: 0;

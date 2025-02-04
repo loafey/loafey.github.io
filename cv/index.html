@@ -66,61 +66,66 @@
                     at the same department.
                 </p>
             </div>
-            <div>
-                <h3>EDUCATION</h3>
-                <div id="education-list"></div>
+            <div class="columns">
+                <div>
+                    <h3>EDUCATION</h3>
+                    <div id="education-list"></div>
+                </div>
+                <div class="columns-border"></div>
+                <div>
+                    <h3>WORK EXPERIENCE</h3>
+                    <div id="experiences-list"></div>
+                </div>
             </div>
-            <div>
-                <h3>SKILLS</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px">
-                    <div class="skills-list">
-                        <h4><b>Programming Languages</b></h4>
-                        <div class="skills-list-lang" style="border-bottom: 2px solid gray;">
-                            <span>Language</span>
-                            <span>Skill level</span>
-                        </div>
-                        <div class="skills-list-lang">
-                            <span>Rust</span>
-                            <div class="skill-bar" style="--i: 90%"></div>
-                        </div>
-                        <div class="skills-list-lang">
-                            <span>Haskell</span>
-                            <div class="skill-bar" style="--i: 80%"></div>
-                        </div>
-                        <div class="skills-list-lang">
-                            <span>Java</span>
-                            <div class="skill-bar" style="--i: 70%"></div>
-                        </div>
-                        <div class="skills-list-lang">
-                            <span>C#</span>
-                            <div class="skill-bar" style="--i: 70%"></div>
-                        </div>
-                        <div class="skills-list-lang">
-                            <span>JavaScript</span>
-                            <div class="skill-bar" style="--i: 50%"></div>
-                        </div>
-                        <div class="skills-list-lang">
-                            <span>Others</span>
-                            <span>Python, C, C++, SQL, HTML, CSS</a>
-                        </div>
+            <h3>SKILLS</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px">
+                <div class="skills-list">
+                    <h4><b>Programming Languages</b></h4>
+                    <div class="skills-list-lang" style="border-bottom: 2px solid gray;">
+                        <span>Language</span>
+                        <span>Skill level</span>
                     </div>
-                    <div class="skills-list">
-                        <h4><b>Tools/Other</b></h4>
-                        <div class="skills-list-lang" style="border-bottom: 2px solid gray;">
-                            <span>&nbsp;</span>
-                        </div>
-                        <div class="skills-list-tools">
-                            <p>
-                                Linux, Windows, Windows Subsystem for Linux, LATEX,
-                                Git, Visual Studio Code
-                            </p>
-                        </div>
-                        <div class="skills-list-tools">
-                            <p>
-                                IntelliJ Idea, Vim, Build Tools(Cargo, Cabal, NPM/Yarn,
-                                Maven, Make)
-                            </p>
-                        </div>
+                    <div class="skills-list-lang">
+                        <span>Rust</span>
+                        <div class="skill-bar" style="--i: 90%"></div>
+                    </div>
+                    <div class="skills-list-lang">
+                        <span>Haskell</span>
+                        <div class="skill-bar" style="--i: 80%"></div>
+                    </div>
+                    <div class="skills-list-lang">
+                        <span>Java</span>
+                        <div class="skill-bar" style="--i: 70%"></div>
+                    </div>
+                    <div class="skills-list-lang">
+                        <span>C#</span>
+                        <div class="skill-bar" style="--i: 70%"></div>
+                    </div>
+                    <div class="skills-list-lang">
+                        <span>JavaScript</span>
+                        <div class="skill-bar" style="--i: 50%"></div>
+                    </div>
+                    <div class="skills-list-lang">
+                        <span>Others</span>
+                        <span>Python, C, C++, SQL, HTML, CSS, GO, X86 Assembly, LLVM IR</a>
+                    </div>
+                </div>
+                <div class="skills-list">
+                    <h4><b>Tools/Other</b></h4>
+                    <div class="skills-list-lang" style="padding-bottom: 7px; border-bottom: 2px solid gray;">
+                        &nbsp;
+                    </div>
+                    <div class="skills-list-tools">
+                        <p>
+                            Linux, Windows, Windows Subsystem for Linux, LATEX,
+                            Git, Visual Studio Code
+                        </p>
+                    </div>
+                    <div class="skills-list-tools">
+                        <p>
+                            IntelliJ Idea, Vim, Build Tools(Cargo, Cabal, NPM/Yarn,
+                            Maven, Make)
+                        </p>
                     </div>
                 </div>
             </div>
@@ -131,12 +136,10 @@
         <article>
             <div class="page-count">2</div>
             <div>
-                <h3>WORK EXPERIENCE</h3>
-                <div id="experiences-list"></div>
-            </div>
-            <div>
                 <h3>OTHER EXPERIENCE</h3>
                 <div id="other-experiences-list"></div>
+            </div>
+            <div>
                 <h4><b>Projects</b> <span class="orange">|</span>
                     A selection of my own and university projects</h4>
                 <div class="table" id="projects-table">
@@ -161,11 +164,11 @@
             li.classList.add("work-experience");
 
             let title = document.createElement("h4");
-            title.innerHTML = `<b>${elem.title}</b> <span class="orange">|</span> ${elem.subtitle}`;
+            title.innerHTML = `<b>${elem.title}</b> `;
             li.appendChild(title);
 
             let date = document.createElement("span");
-            date.innerText = elem.date;
+            date.innerHTML = `${elem.subtitle}<br>${elem.date}`;
             li.appendChild(date);
 
             let desc = document.createElement("p");
@@ -179,7 +182,7 @@
         OTHER_EXPERIENCES.forEach((elem) => ExperienceFunc(otherExperiencesList, elem));
         EDUCATION.forEach((elem) => ExperienceFunc(educationList, elem));
 
-        PROJECT_LIST.slice(0, 5).forEach((elem) => {
+        PROJECT_LIST.slice(0, 7).forEach((elem) => {
             let div = document.createElement("div");
             div.classList.add("experience-table-row");
 
