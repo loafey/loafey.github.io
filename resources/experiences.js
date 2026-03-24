@@ -1,5 +1,14 @@
 const EXPERIENCES = [
     {
+        title: "Opera",
+        subtitle: "iOS Developer",
+        date: "August 2025",
+        description: `
+        Currently working as an iOS developer for Opera, working on the iOS version of the Opera browser.
+        Working primarly in Swift. 
+        `
+    },
+    {
         title: "Chalmers",
         subtitle: "Research Assistant",
         date: "January 2024 - July 2024",
