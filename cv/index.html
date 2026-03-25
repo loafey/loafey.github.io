@@ -15,6 +15,8 @@
     <script src="../resources/experiences.js"></script>
     <script src="../resources/other-experiences.js"></script>
     <script src="../resources/education.js"></script>
+    <script src="../resources/education-short.js"></script>
+    <script src="../resources/skills.js"></script>
 
     <style>
         @page {
@@ -59,7 +61,6 @@
             <hr>
 
             <div>
-                <h3>ABOUT ME</h3>
                 <p>
                     Hi! I am currently a Swift developer working on Opera's iOS developer. Outside of that I have a
                     masters degree
@@ -68,16 +69,14 @@
                     backend development, and self-hosting!
                 </p>
             </div>
-            <div class="columns">
-                <div>
-                    <h3>WORK EXPERIENCE</h3>
-                    <div id="experiences-list"></div>
-                </div>
-                <div class="columns-border"></div>
-                <div>
-                    <h3>EDUCATION</h3>
-                    <div id="education-list"></div>
-                </div>
+            <div>
+                <h3>WORK EXPERIENCE</h3>
+                <div id="experiences-list"></div>
+            </div>
+            <div class="columns-border"></div>
+            <div>
+                <h3>EDUCATION</h3>
+                <div id="education-list"></div>
             </div>
             <!-- <h3>SKILLS</h3>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0px">
@@ -131,16 +130,22 @@
                     </div>
                 </div>
             </div> -->
+
+            <div>
+                <h3>OTHER EXPERIENCE</h3>
+                <div id="other-experiences-list"></div>
+            </div>
+
+            <div>
+                <h3>SKILLS & PROFICENCIES</h3>
+                <div id="skills-list"></div>
+            </div>
         </article>
     </section>
 
     <section class="sheet padding-10mm">
         <article>
             <div class="page-count">2</div>
-            <div>
-                <h3>OTHER EXPERIENCE</h3>
-                <div id="other-experiences-list"></div>
-            </div>
             <div>
                 <h4><b>Projects</b> <span class="orange">|</span>
                     A selection of my own and university projects</h4>
@@ -160,29 +165,53 @@
         let otherExperiencesList = document.getElementById("other-experiences-list");
         let experiencesList = document.getElementById("experiences-list");
         let educationList = document.getElementById("education-list");
+        let skillList = document.getElementById("skills-list");
 
         const ExperienceFunc = (parent, elem) => {
             let li = document.createElement("div");
             li.classList.add("work-experience");
 
-            let title = document.createElement("h4");
-            title.innerHTML = `<b>${elem.title}</b> `;
+            let title = document.createElement("span");
+            title.innerHTML = `${elem.date.replace(" - ", "<br>")}`;
             li.appendChild(title);
 
-            let date = document.createElement("span");
-            date.innerHTML = `${elem.subtitle}<br>${elem.date}`;
+            let date = document.createElement("b");
+            date.innerHTML = `${elem.title} - ${elem.subtitle}`;
             li.appendChild(date);
 
             let desc = document.createElement("p");
-            desc.innerHTML = elem.description;
+            desc.innerHTML = `${elem.description}`;
             li.appendChild(desc);
 
             parent.appendChild(li);
         };
 
+        const SkillFunc = (parent, name, items) => {
+            let title = document.createElement("span");
+            title.innerHTML = name;
+            parent.appendChild(title);
+
+            let string = "";
+            for (let i = 0; i < items.length; i++) {
+                const sep = (i + 1 == items.length) ? " and " : ", ";
+                if (string.length == 0) {
+                    string = items[i];
+                } else {
+                    string += `${sep}${items[i]}`;
+                }
+            }
+
+            console.log(items);
+
+            let content = document.createElement("span");
+            content.innerHTML = string;
+            parent.appendChild(content);
+        };
+
         EXPERIENCES.forEach((elem) => ExperienceFunc(experiencesList, elem));
         OTHER_EXPERIENCES.forEach((elem) => ExperienceFunc(otherExperiencesList, elem));
-        EDUCATION.forEach((elem) => ExperienceFunc(educationList, elem));
+        EDUCATION_SHORT.forEach((elem) => ExperienceFunc(educationList, elem));
+        Object.keys(SKILLS).forEach((key) => SkillFunc(skillList, key, SKILLS[key]));
 
         PROJECT_LIST.slice(0, 9).forEach((elem) => {
             let div = document.createElement("div");
