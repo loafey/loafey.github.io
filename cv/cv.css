@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
-.title {
-    font-family: 'Roboto', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 100;
-    text-align: center;
-}
-
 * {
     color: rgb(49, 49, 49);
 }
@@ -26,14 +19,6 @@
     position: absolute;
     right: 10mm;
     bottom: 10mm;
-}
-
-.top-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-weight: 300;
-    font-size: 1.2rem;
 }
 
 ul {
@@ -192,4 +177,34 @@ a:visited {
 .table-top {
     background-color: rgb(190, 190, 190) !important;
     border-bottom: 2px solid gray;
+}
+
+.top-portion {
+    display: grid;
+    grid-template-columns: 1.2fr 1.3px 32px 1fr;
+    align-items: center;
+}
+
+.top-divider {
+    background-color: #313131;
+    height: 100%;
+}
+
+.top-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+    padding-left: 4px;
 }
