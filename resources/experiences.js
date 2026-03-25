@@ -24,7 +24,7 @@ const EXPERIENCES = [
         date: "2021-2024 - Multiple occasions",
         description: `
         Worked as a TA multiple times in beginner courses in Python, 
-        and once in a beginner course in Haskell.`
+        and twice in a beginner course in Haskell.`
     },
     {
         title: "Aptiv",

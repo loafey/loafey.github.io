@@ -28,7 +28,7 @@
 <body class="A4">
     <section class="sheet padding-10mm">
         <article>
-            <div class="page-count">1</div>
+            <!-- <div class="page-count">1</div> -->
             <div class="top-portion">
                 <div class="title">
                     Samuel <b>Hammersberg</b><br>
@@ -60,9 +60,10 @@
 
             <hr>
 
-            <div>
+            <div class="free-text">
                 <p>
-                    Hi! I am currently a Swift developer working on Opera's iOS developer. Outside of that I have a
+                    &nbsp;&nbsp; I am currently a Swift developer working on Opera's iOS browser. Outside of that I have
+                    a
                     masters degree
                     in Computer Science. Outside of that I have a lot of interest in compilers, systems-level
                     programming (primarly in Rust),
@@ -72,6 +73,7 @@
             <div>
                 <h3>WORK EXPERIENCE</h3>
                 <div id="experiences-list"></div>
+                <div id="other-experiences-list"></div>
             </div>
             <div class="columns-border"></div>
             <div>
@@ -132,30 +134,13 @@
             </div> -->
 
             <div>
-                <h3>OTHER EXPERIENCE</h3>
-                <div id="other-experiences-list"></div>
-            </div>
-
-            <div>
                 <h3>SKILLS & PROFICENCIES</h3>
                 <div id="skills-list"></div>
             </div>
-        </article>
-    </section>
 
-    <section class="sheet padding-10mm">
-        <article>
-            <div class="page-count">2</div>
             <div>
-                <h4><b>Projects</b> <span class="orange">|</span>
-                    A selection of my own and university projects</h4>
-                <div class="table" id="projects-table">
-                    <div class="experience-table-row table-top">
-                        <p style="text-align: center;">Project</p>
-                        <p style="text-align: center;">Language</p>
-                        <p>Description</p>
-                    </div>
-                </div>
+                <h3>Projects</h3>
+                <div id="project-list"></div>
             </div>
         </article>
     </section>
@@ -166,6 +151,7 @@
         let experiencesList = document.getElementById("experiences-list");
         let educationList = document.getElementById("education-list");
         let skillList = document.getElementById("skills-list");
+        let projectList = document.getElementById("project-list");
 
         const ExperienceFunc = (parent, elem) => {
             let li = document.createElement("div");
@@ -213,9 +199,8 @@
         EDUCATION_SHORT.forEach((elem) => ExperienceFunc(educationList, elem));
         Object.keys(SKILLS).forEach((key) => SkillFunc(skillList, key, SKILLS[key]));
 
-        PROJECT_LIST.slice(0, 9).forEach((elem) => {
+        PROJECT_LIST.slice(2, 8).forEach((elem) => {
             let div = document.createElement("div");
-            div.classList.add("experience-table-row");
 
             let title = null;
             if (elem.link) {
@@ -225,21 +210,23 @@
                 title = document.createElement("p");
 
             }
-            title.style.textAlign = "center";
-            title.innerText = elem.title;
+            title.style.textAlign = "right";
+            title.innerText = `${elem.title}`;
+            title.style.fontWeight = "bold";
 
-            let language = document.createElement("p");
-            language.style.textAlign = "center";
-            language.innerText = elem.language;
-
-            let description = document.createElement("p");
+            let description = document.createElement("span");
             description.innerHTML = elem.content;
 
-            div.appendChild(title);
-            div.appendChild(language);
-            div.appendChild(description);
+            let bulletContainer = document.createElement("div");
+            bulletContainer.classList.add("project-list-bullet-parent");
 
-            projectsTable.appendChild(div);
+            let bullet = document.createElement("div");
+            bullet.classList.add("project-list-bullet");
+            bulletContainer.appendChild(bullet);
+
+            projectList.appendChild(bulletContainer);
+            projectList.appendChild(title);
+            projectList.appendChild(description);
         })
     </script>
 </body>

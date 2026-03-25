@@ -12,7 +12,7 @@ const SKILLS = {
         "SQL",
         "HTML / CSS",
         "GO",
-        "x86 - 64 Assembly",
+        "x86-64 Assembly",
         "LLVM IR"
     ],
     "Frameworks & Libraries": [
