@@ -1,5 +1,13 @@
 const PROJECT_LIST = [
     {
+        title: "Master Thesis",
+        language: "Haskell",
+        link: "https://github.com/loafey/churf/blob/main/bachelor-thesis.pdf",
+        content: `A typed system-level functional programming language based on continuations and linear types. 
+        Written Sebastian Selander and myself. I primarily spent time working on the
+        code generation to x86-64, and got to focus on designing the ABI and memory layout among other things.`
+    },
+    {
         title: "Bachelor Thesis",
         language: "Haskell",
         link: "https://github.com/loafey/churf",
@@ -7,6 +15,16 @@ const PROJECT_LIST = [
         team of six people, 
         and I personally spent time working on the
         code generation to LLVM IR.`
+    },
+    {
+        title: "Blastcap",
+        language: "Rust & C#",
+        link: "https://github.com/loafey/blastcap",
+        content: `A very work-in-progress, multiplayer turned based strategy game. 
+            Backend and game logic is written in Rust, while the frontend is made with C# and Godot.
+            The backend and frontend communicates through FFI, with binding code I automatically generate using 
+            Rust's macro system. The multiplayer works over TCP or Steam.
+        `
     },
     {
         title: "WASP",
