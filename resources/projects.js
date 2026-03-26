@@ -20,23 +20,24 @@ const PROJECT_LIST = [
         title: "Blastcap",
         language: "Rust & C#",
         link: "https://github.com/loafey/blastcap",
-        content: `A very work-in-progress, multiplayer turned based strategy game. 
-            Backend and game logic is written in Rust, while the frontend is made with C# and Godot.
-            The backend and frontend communicates through FFI, with binding code I automatically generate using 
-            Rust's macro system. The multiplayer works over TCP or Steam.
+        content: `
+        A multiplayer turn-based strategy game.
+        Backend and game logic are written in Rust, with a frontend made with Godot and C#.
+        The backend and frontend communicate through FFI, with binding code automatically generated using 
+        Rust's macro system.
         `
     },
     {
         title: "WASP",
         language: "Rust",
         link: "https://github.com/loafey/wasp",
-        content: `An experimental (mostly and soon) spec compliant WASM runtime written in Rust.`
+        content: `An experimental (mostly and soon) spec-compliant WASM runtime written in Rust.`
     },
     {
         title: "Ondth",
         language: "Rust",
         link: "https://github.com/loafey/ondth",
-        content: `An experimental multiplayer shooter that allows for level scripting 
+        content: `Multiplayer shooter that allows for level scripting 
             using arbitrary languages compiled to WebAssembly.`
     },
     {
@@ -45,19 +46,19 @@ const PROJECT_LIST = [
         content: `My solutions of Advent of Code in Rust.`
     },
     {
+        title: "rusty_procedure_call", language: "Rust",
+        link: "https://github.com/loafey/rusty_procedure_call",
+        content: `A proof of concept RPC macro for Rust.
+        Automatically generates the RPC network code
+        for sharing a struct accross network boundaries, allowing for easy prototyping for
+        network interfaces.`
+    },
+    {
         title: "logiko", language: "Rust",
         link: "https://github.com/loafey/logiko",
         content: `A puzzle game made where you solve Fitch style natural deduction proofs.
             Can be found over at <a href="https://loafey.se/logiko/">loafey.se/logiko/<a>
         `
-    },
-    {
-        title: "rusty_procedure_call", language: "Rust",
-        link: "https://github.com/loafey/rusty_procedure_call",
-        content: `A proof of concept RPC macro for Rust.
-        Automatically generates the RPC network code
-        for a  struct allowing for easy prototyping for
-        network interfaces.`
     },
     {
         title: "Interior Mutability Pointer", language: "Rust",

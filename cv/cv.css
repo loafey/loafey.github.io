@@ -5,7 +5,7 @@
 }
 
 :root {
-    --default-font-size: 0.71rem;
+    --default-font-size: 0.8rem;
 }
 
 .free-text {
@@ -45,7 +45,7 @@ h3 {
     font-weight: 400;
     font-size: 1rem;
     line-height: 0.5rem;
-    margin-left: 64px;
+    margin-left: 164px;
     margin-bottom: 14px;
 }
 
@@ -63,8 +63,8 @@ h3::before {
     position: absolute;
     content: "";
     background-color: orangered;
-    width: 16px;
-    margin-left: -24px;
+    width: 32px;
+    margin-left: calc(-32px - 16px);
     height: 2px;
     margin-top: 3px;
 }

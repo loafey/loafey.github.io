@@ -44,12 +44,12 @@
                         <a href="https://loafey.se">loafey.se</a>
                     </span>
                     <span>
-                        <i class="fa-brands fa-github"></i>
-                        <a href="https://github.com/loafey">GitHub</a>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/samuel-hammersberg-b04760224/">loafey</a>
                     </span>
                     <span>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/samuel-hammersberg-b04760224/">LinkedIn</a>
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/loafey">loafey</a>
                     </span>
                     <span>
                         <i class="fa-solid fa-envelope"></i>
@@ -62,11 +62,10 @@
 
             <div class="free-text">
                 <p>
-                    &nbsp;&nbsp; I am currently a Swift developer working on Opera's iOS browser. Outside of that I have
-                    a
-                    masters degree
-                    in Computer Science. Outside of that I have a lot of interest in compilers, systems-level
-                    programming (primarly in Rust),
+                    I am currently working as a iOS developer working on Opera's iOS browser. I have
+                    a master's degree in Computer Science. Personally, I have a lot of interest in compilers,
+                    systems-level
+                    programming (primarily in Rust),
                     backend development, and self-hosting!
                 </p>
             </div>
@@ -139,7 +138,7 @@
             </div>
 
             <div>
-                <h3>Projects</h3>
+                <h3>PROJECTS</h3>
                 <div id="project-list"></div>
             </div>
         </article>
@@ -179,7 +178,7 @@
 
             let string = "";
             for (let i = 0; i < items.length; i++) {
-                const sep = (i + 1 == items.length) ? " and " : ", ";
+                const sep = (i + 1 == items.length) ? ", and " : ", ";
                 if (string.length == 0) {
                     string = items[i];
                 } else {
@@ -199,7 +198,7 @@
         EDUCATION_SHORT.forEach((elem) => ExperienceFunc(educationList, elem));
         Object.keys(SKILLS).forEach((key) => SkillFunc(skillList, key, SKILLS[key]));
 
-        PROJECT_LIST.slice(2, 8).forEach((elem) => {
+        PROJECT_LIST.slice(2, 7).forEach((elem) => {
             let div = document.createElement("div");
 
             let title = null;
