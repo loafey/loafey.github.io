@@ -2,7 +2,7 @@ const PROJECT_LIST = [
     {
         title: "Master Thesis",
         language: "Haskell",
-        link: "https://github.com/loafey/churf/blob/main/bachelor-thesis.pdf",
+        link: "https://loafey.se/resources/Thesis.pdf",
         content: `A typed system-level functional programming language based on continuations and linear types. 
         Written Sebastian Selander and myself. I primarily spent time working on the
         code generation to x86-64, and got to focus on designing the ABI and memory layout among other things.`
