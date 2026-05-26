@@ -233,8 +233,7 @@ body {
     background-color: var(--cbg);
     border: var(--border-color) var(--border-size) solid;
     margin-top: var(--border-margin);
-    display: grid;
-    grid-template-rows: 64px auto;
+    padding-top: var(--border-margin);
     border-radius: var(--app-radius);
 }
 
@@ -242,6 +241,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .main-rest .buttons button {
@@ -250,8 +250,6 @@ body {
     cursor: pointer;
     font-size: var(--nav-button-font-size);
     border: none;
-    padding-left: 10px;
-    padding-right: 10px;
     color: var(--c0);
 }
 
